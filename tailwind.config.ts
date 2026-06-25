@@ -11,7 +11,7 @@ const config: Config = {
         ink: "#07111f",
         navy: "#0b1b2f",
         steel: "#142b44",
-        cyan: "#31d5e8",
+        cyan: "#2563eb",
         mist: "#eaf1f5",
       },
       boxShadow: {
@@ -20,7 +20,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-radial":
-          "radial-gradient(circle at 75% 25%, rgba(49,213,232,.18), transparent 32%), radial-gradient(circle at 15% 80%, rgba(34,93,150,.18), transparent 34%)",
+          "radial-gradient(circle at 75% 25%, rgba(37,99,235,.20), transparent 32%), radial-gradient(circle at 15% 80%, rgba(34,93,150,.18), transparent 34%)",
       },
     },
   },

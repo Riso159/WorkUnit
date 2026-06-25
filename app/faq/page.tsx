@@ -10,7 +10,7 @@ import { faqs } from "@/lib/content";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Odpovede na časté otázky o dodaní personálu, vybavení, ubytovaní a priebehu spolupráce.",
+    "Odpovede na časté otázky o pracovníkoch, tímoch, krajinách, cene, ubytovaní a procese spolupráce.",
   openGraph: {
     title: "FAQ | WorkUnit s.r.o.",
     description: "Časté otázky o pracovných tímoch a spolupráci s WorkUnit.",
@@ -22,8 +22,8 @@ export default function FAQPage() {
     <>
       <PageHero
         eyebrow="Časté otázky"
-        title="Základné odpovede pred prvým kontaktom"
-        description="Konkrétne podmienky vždy závisia od projektu. Tu nájdete odpovede na otázky, ktoré sa pri úvodnom rozhovore objavujú najčastejšie."
+        title="Odpovede na otázky pred prvým dopytom"
+        description="Konkrétne podmienky vždy závisia od projektu, krajiny, profesie a trvania spolupráce. Tu sú vecné odpovede podľa klientského dotazníka."
         code="WU / FAQ"
       >
         <Button href="/kontakt">Mám ďalšiu otázku</Button>

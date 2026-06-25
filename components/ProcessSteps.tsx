@@ -5,7 +5,7 @@ type Step = {
 
 export function ProcessSteps({ steps }: { steps: Step[] }) {
   return (
-    <ol className="relative mt-12 grid gap-0 lg:grid-cols-5">
+    <ol className="relative mt-12 grid gap-0 lg:grid-cols-7">
       <div
         className="absolute left-[10%] right-[10%] top-6 hidden h-px bg-slate-200 lg:block"
         aria-hidden="true"

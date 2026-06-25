@@ -1,7 +1,7 @@
 import Link from "next/link";
-import type { Service } from "@/lib/content";
+import type { ServiceSummary } from "@/lib/content";
 
-export function ServiceCard({ service }: { service: Service }) {
+export function ServiceCard({ service }: { service: ServiceSummary }) {
   return (
     <Link
       href={service.href}
@@ -22,7 +22,7 @@ export function ServiceCard({ service }: { service: Service }) {
         </h3>
         <p className="mt-4 text-sm leading-7 text-slate-600">{service.description}</p>
         <span className="mt-6 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.13em] text-navy">
-          Detail služby
+          Pozrieť sekciu
           <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
         </span>
       </div>

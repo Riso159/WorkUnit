@@ -1,6 +1,6 @@
 # WorkUnit web prototyp
 
-Viacstránkový prezentačný web pre WorkUnit s.r.o. postavený na Next.js App Router, TypeScripte a Tailwind CSS.
+Aktualizovaný viacstránkový web pre WorkUnit s.r.o. podľa vyplneného klientského dotazníka. Dotazník je braný ako hlavný zdroj pravdy.
 
 ## Spustenie
 
@@ -23,33 +23,42 @@ npm run build
 ## Implementované stránky
 
 - `/`
-- `/o-nas`
 - `/sluzby`
-- `/sluzby/stavebnictvo`
-- `/sluzby/skladova-logistika`
-- `/sluzby/vyroba`
 - `/projekty`
-- `/pre-firmy`
-- `/pre-pracovnikov`
-- `/kontakt`
+- `/o-nas`
 - `/faq`
+- `/kontakt`
+- `/dakujeme`
+- `/cs`, `/en`, `/de` ako placeholdery pre budúce jazykové verzie
+
+## Hlavné úpravy podľa dotazníka
+
+- služby sú na jednej stránke, nie ako samostatné detailné podstránky,
+- stavebníctvo je hlavná dominantná služba,
+- komunikácia používa formálne vykanie a B2B tón,
+- claimy a čísla sú obmedzené na fakty z dotazníka,
+- krajiny pôsobenia sú konkrétne: SK, CZ, AT, DE, NL,
+- reálne skúsenosti sú komunikované najmä s Nemeckom a Českom,
+- ubytovanie je formulované presne: WorkUnit pomáha s vyhľadaním, pracovníci si ho hradia sami,
+- formulár je pripravený na Resend, spam ochranu a analytickú konverziu, ale zatiaľ dáta neodosiela.
 
 ## Aktuálne placeholdery
 
-- textové logo a monogram WU,
-- fotografie tímu, pracovísk a projektov,
-- konkrétne referencie a klienti,
-- telefón a e-mail,
-- mapový podklad,
-- právne stránky,
-- reálne odosielanie kontaktného formulára.
-
-Kontaktný formulár je zámerne iba frontendový prototyp. Po odoslaní zobrazí informačnú hlášku a neposiela ani neukladá údaje. Miesto pre budúce napojenie služby Resend je označené komentárom v `components/ContactFormPlaceholder.tsx`.
+- finálne logo súbor,
+- reálne fotografie,
+- telefón,
+- referencie, logá klientov, prípadové štúdie a čísla projektov,
+- právne texty GDPR a cookies,
+- preklady CZ / EN / DE,
+- Resend API, doménová verifikácia a produkčné ENV premenné,
+- Google Analytics a Search Console.
 
 ## Pred ostrým spustením
 
-1. Doplniť finálne logo, fotografie a schválené referencie.
-2. Doplniť telefón, e-mail a právne texty.
-3. Potvrdiť finálne texty, rozsah služieb a krajiny pôsobenia.
-4. Pripojiť formulár k backendu, validácii, antispam ochrane a Resend.
-5. Nastaviť produkčnú doménu, analytiku, cookies a finálne Open Graph dáta.
+1. Doplniť logo a vizuálne podklady.
+2. Doplniť telefón a potvrdiť e-mailové adresy.
+3. Doplniť právne texty GDPR/cookies.
+4. Napojiť formulár na Resend, spam ochranu a konverzné meranie.
+5. Doplniť alebo schváliť preklady CZ / EN / DE.
+6. Doplniť reálne referencie, fotky a čísla, ktoré klient povolí zverejniť.
+7. Nastaviť produkčný deployment, DNS, analytiku a Search Console.

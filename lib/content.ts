@@ -1,197 +1,347 @@
-export type Service = {
-  number: string;
-  title: string;
-  description: string;
-  href: string;
-  tag: string;
+export const company = {
+  name: "WorkUnit s.r.o.",
+  ico: "54883288",
+  dic: "2121824540",
+  icDph: "SK2121824540",
+  address: "Pod Juhom 7666/1, 911 01 Trenčín",
+  domain: "www.workunit.sk",
+  emailPrimary: "info@workunit.sk",
+  emailSales: "sales@workunit.sk",
+  phone: "doplniť telefón",
+  founder: "Michael Krennert",
+  founded: "2022",
 };
 
-export const services: Service[] = [
+export type ServiceSection = {
+  id: string;
+  number: string;
+  title: string;
+  eyebrow: string;
+  description: string;
+  items: string[];
+  note?: string;
+};
+
+export const services: ServiceSection[] = [
   {
+    id: "stavebnictvo",
     number: "01",
     title: "Stavebníctvo",
+    eyebrow: "Hlavná oblasť",
     description:
-      "Pracovné tímy pre stavebné, montážne, dokončovacie a pomocné práce podľa potrieb projektu.",
-    href: "/sluzby/stavebnictvo",
-    tag: "Stavby",
+      "Pracovné tímy pre stavebné projekty so zameraním na strechy, remeselné práce, montáže a dokončovacie činnosti podľa požiadaviek projektu.",
+    items: [
+      "izolatéri plochých striech",
+      "izolatéri šikmých striech",
+      "klampiari",
+      "maliari",
+      "murári",
+      "betonári",
+      "okenári",
+      "žeriavnici",
+      "bagristi",
+      "pomocníci",
+      "montážne práce",
+      "dokončovacie práce",
+      "fasády",
+      "sadrokartón",
+      "elektro podľa dostupnosti",
+      "zváranie podľa dostupnosti",
+      "armovanie",
+    ],
+    note: "Konkrétne profesie a počet pracovníkov sa potvrdzujú podľa dostupnosti a zadania.",
   },
   {
+    id: "skladova-logistika",
     number: "02",
     title: "Skladová logistika",
+    eyebrow: "Prevádzkové kapacity",
     description:
-      "Flexibilné personálne zabezpečenie skladových prevádzok, manipulácie s tovarom a logistických procesov.",
-    href: "/sluzby/skladova-logistika",
-    tag: "Logistika",
+      "Tímy pre skladové a logistické prevádzky, kde rozhoduje spoľahlivosť, tempo a schopnosť prispôsobiť sa potrebám prevádzky.",
+    items: [
+      "VZV",
+      "manipulácia s tovarom",
+      "nakládka",
+      "vykládka",
+      "pomocné skladové práce",
+      "logistické procesy podľa potrieb prevádzky",
+    ],
   },
   {
+    id: "vyroba",
     number: "03",
     title: "Výroba",
+    eyebrow: "Priemysel a montáž",
     description:
-      "Pracovníci pre výrobné prevádzky, montáž, priemyselné projekty a pomocné výrobné práce.",
-    href: "/sluzby/vyroba",
-    tag: "Priemysel",
-  },
-  {
-    number: "04",
-    title: "Montážne a pomocné práce",
-    description:
-      "Tímy pripravené doplniť kapacity pri montážach a praktických pomocných činnostiach.",
-    href: "/kontakt",
-    tag: "Montáže",
-  },
-  {
-    number: "05",
-    title: "Subdodávateľské tímy",
-    description:
-      "Ucelené partie zostavené podľa rozsahu, časového rámca a miesta realizácie zákazky.",
-    href: "/pre-firmy",
-    tag: "Subdodávka",
+      "Pracovníci pre výrobné a montážne prostredie, najmä pri jednoduchých výrobných a montážnych činnostiach podľa dohody.",
+    items: [
+      "montáž",
+      "pracovníci pre výrobné prevádzky",
+      "priemyselné projekty",
+      "jednoduché výrobné a montážne činnosti podľa dohody",
+    ],
   },
 ];
 
+export const serviceSummary = services.map((service) => ({
+  number: service.number,
+  title: service.title,
+  description: service.description,
+  href: `/sluzby#${service.id}`,
+  tag: service.eyebrow,
+}));
+
+export type ServiceSummary = (typeof serviceSummary)[number];
+
 export const companyValues = [
   {
+    title: "Kvalita práce",
+    description:
+      "Tímy sa vyberajú podľa skúseností, komunikácie a dôkazov predchádzajúcej práce.",
+  },
+  {
     title: "Spoľahlivosť",
-    description: "Dohodnuté kroky, otvorená komunikácia a praktický prístup.",
+    description:
+      "Dlhodobá spolupráca stojí na férových dohodách, dochádzke a odpracovaných hodinách.",
   },
   {
-    title: "Flexibilita",
-    description: "Riešenie prispôsobujeme typu projektu, kapacite a lokalite.",
+    title: "Férovosť",
+    description:
+      "Cenu a podmienky riešime individuálne tak, aby spolupráca dávala zmysel obom stranám.",
   },
   {
-    title: "Rýchla reakcia",
-    description: "Na dopyt nadväzujeme konkrétnymi otázkami a návrhom ďalšieho postupu.",
+    title: "Rýchlosť",
+    description:
+      "Pri bežnej zákazke vieme pracovníkov nasadiť už do 5–7 dní.",
   },
   {
-    title: "Praktické riešenia",
-    description: "Sústredíme sa na reálne prevádzkové potreby a vykonateľné nastavenie.",
-  },
-  {
-    title: "Individuálny prístup",
-    description: "Každú zákazku posudzujeme samostatne podľa jej rozsahu a podmienok.",
+    title: "Stabilita",
+    description:
+      "WorkUnit sa zameriava najmä na dlhodobé projekty a stabilných spolupracovníkov.",
   },
 ];
 
 export const collaborationSteps = [
   {
-    title: "Pošlete dopyt",
-    description: "Stručne nám opíšete typ práce, lokalitu a požadovaný termín.",
+    title: "Kontaktujete nás",
+    description: "Najrýchlejšie telefonicky alebo e-mailom.",
   },
   {
-    title: "Prejdeme rozsah",
-    description: "Spoločne si spresníme kapacitu, trvanie a podmienky projektu.",
+    title: "Prejdeme zadanie",
+    description:
+      "Typ práce, krajinu, miesto projektu, termín, počet pracovníkov a očakávania.",
   },
   {
-    title: "Navrhneme riešenie",
-    description: "Pripravíme realistický model spolupráce podľa dostupnej kapacity.",
+    title: "Overíme dostupnosť",
+    description:
+      "Preveríme kapacity a zostavíme vhodný tím podľa profesie a krajiny.",
   },
   {
-    title: "Pripravíme tím",
-    description: "Zostavíme vhodnú partiu a dohodneme organizačné zabezpečenie.",
+    title: "Dohodneme podmienky",
+    description:
+      "Obchodné a administratívne podmienky riešime podľa konkrétneho projektu.",
   },
   {
-    title: "Spustíme spoluprácu",
-    description: "Po odsúhlasení podmienok tím nastúpi na dohodnutý projekt.",
+    title: "Pripravíme nasadenie",
+    description:
+      "Pracovníci majú potrebné OOPP, školenia alebo oprávnenia podľa projektu.",
+  },
+  {
+    title: "Komunikujeme počas projektu",
+    description:
+      "Cez pracovníkov, vedúceho tímu alebo WorkUnit podľa potreby zákazky.",
+  },
+  {
+    title: "Potvrdzujeme výkazy",
+    description:
+      "Dochádzka a odpracované hodiny sa potvrdzujú cez šichtovky.",
   },
 ];
 
 export const businessBenefits = [
   {
-    title: "Rýchle doplnenie kapacít",
+    title: "Nasadenie už do 5–7 dní",
     description:
-      "Podľa dostupnosti a rozsahu projektu vieme tím pripraviť približne v horizonte 1–2 týždňov.",
+      "Pri bežnej zákazke vieme reagovať rýchlo; väčšie alebo špecifické dopyty posudzujeme individuálne.",
   },
   {
-    title: "Tímy podľa projektu",
+    title: "Malé aj väčšie tímy",
     description:
-      "Počet pracovníkov aj ich zameranie nastavujeme podľa konkrétnej prevádzkovej potreby.",
+      "Typicky zabezpečujeme 1–10 pracovníkov, od dvojíc až po väčšie partie podľa projektu.",
   },
   {
-    title: "Logistická flexibilita",
+    title: "Stabilní spolupracovníci",
     description:
-      "Pôsobenie na Slovensku aj v rámci EÚ riešime individuálne podľa podmienok zákazky.",
+      "WorkUnit funguje kombinovaným modelom vlastného personálu, stabilných spolupracovníkov a subdodávateľov.",
   },
   {
-    title: "Vlastné vozidlá a náradie",
+    title: "Vozidlá a náradie",
     description:
-      "Disponujeme vozidlami a základným ručným náradím; ďalšie vybavenie sa dohodne podľa projektu.",
+      "K dispozícii sú 2 pracovné dodávky Renault Master a základné AKU náradie.",
+  },
+];
+
+export const trustStats = [
+  { value: "2022", label: "založenie WorkUnit s.r.o." },
+  { value: "5–7 dní", label: "nasadenie pri bežnej zákazke" },
+  { value: "1–10", label: "typický rozsah pracovníkov" },
+  { value: "SK / CZ / AT / DE / NL", label: "krajiny pôsobenia" },
+];
+
+export const targetCustomers = [
+  "stavebné firmy",
+  "veľkí generálni dodávatelia",
+  "logistické firmy",
+  "výrobné a montážne prevádzky",
+  "lokálne firmy pri menších subdodávkach",
+  "zahraničné firmy overujúce dodávateľa",
+];
+
+export const countries = [
+  {
+    code: "SK",
+    name: "Slovensko",
+    note: "sídlo a domáci trh",
+  },
+  {
+    code: "CZ",
+    name: "Česko",
+    note: "reálne skúsenosti",
+  },
+  {
+    code: "DE",
+    name: "Nemecko",
+    note: "kľúčový trh a reálne skúsenosti",
+  },
+  {
+    code: "AT",
+    name: "Rakúsko",
+    note: "obchodne dôležitá krajina",
+  },
+  {
+    code: "NL",
+    name: "Holandsko",
+    note: "obchodne dôležitá krajina",
   },
 ];
 
 export const projectTypes = [
   {
-    title: "Stavebné tímy pre projekty v EÚ",
+    title: "Stavebný projekt v Nemecku",
     description:
-      "Ukážka typu zákazky pre stavebné, dokončovacie alebo pomocné práce mimo Slovenska.",
-    code: "EU / BUILD",
+      "Anonymizovaná štruktúra pre budúcu prípadovú štúdiu zo stavebného projektu.",
+    code: "DE / BUILD",
+    type: "Anonymizovaný projekt",
   },
   {
-    title: "Skladové tímy pre logistické prevádzky",
+    title: "Strešné a izolatérske práce",
     description:
-      "Ukážka personálneho doplnenia skladovej prevádzky podľa aktuálneho objemu práce.",
-    code: "SK / LOG",
+      "Priestor pre doplnenie prác na plochých alebo šikmých strechách po schválení podkladov.",
+    code: "ROOF / CASE",
+    type: "Prípadová štúdia – doplniť údaje",
   },
   {
-    title: "Výrobné a montážne tímy",
+    title: "Logistická prevádzka",
     description:
-      "Ukážka nasadenia pracovníkov vo výrobe, pri montáži alebo na priemyselnom projekte.",
-    code: "EU / PROD",
+      "Placeholder pre skladový alebo logistický projekt s budúcimi číslami a fotkami.",
+    code: "LOG / EU",
+    type: "Fotky a čísla budú doplnené",
   },
   {
-    title: "Subdodávateľské partie podľa zákazky",
+    title: "Montážne práce vo výrobe",
     description:
-      "Ukážka uceleného tímu zostaveného podľa rozsahu a harmonogramu konkrétneho projektu.",
-    code: "B2B / TEAM",
+      "Štruktúra pre výrobný alebo montážny projekt bez uvádzania názvu klienta.",
+    code: "PROD / MNT",
+    type: "Anonymizovaný projekt",
   },
 ];
 
 export const faqs = [
   {
-    question: "Ako rýchlo viete zabezpečiť personál?",
+    question: "Ako rýchlo viete zabezpečiť pracovníkov?",
     answer:
-      "Štandardne pracujeme s orientačným horizontom približne 1–2 týždňov. Presný termín závisí od počtu pracovníkov, profesií, lokality a aktuálnej kapacity.",
+      "Pri bežnej zákazke vieme pracovníkov nasadiť už do 5–7 dní. Pri väčších alebo špecifických dopytoch riešime termín individuálne.",
   },
   {
-    question: "Máte vlastné vybavenie?",
+    question: "Aké tímy viete zabezpečiť?",
     answer:
-      "Disponujeme vlastnými vozidlami a základným ručným náradím. Špecifické pracovné vybavenie a ochranné pomôcky sa nastavujú podľa podmienok konkrétneho projektu.",
+      "Zabezpečujeme jednotlivcov aj pracovné tímy. Typicky ide o 1–10 pracovníkov podľa projektu, pričom pri väčších dopytoch preverujeme kapacity individuálne.",
+  },
+  {
+    question: "V ktorých krajinách pôsobíte?",
+    answer:
+      "Zameriavame sa najmä na Slovensko, Česko, Nemecko, Rakúsko a Holandsko. Skúsenosti máme najmä s Nemeckom a Českom.",
   },
   {
     question: "Zabezpečujete ubytovanie?",
     answer:
-      "Ubytovanie pracovníkov riešime podľa projektu a dohody so zákazníkom. Spôsob zabezpečenia je súčasťou úvodného nastavenia spolupráce.",
+      "S ubytovaním vieme pomôcť pri vyhľadaní vhodnej možnosti čo najbližšie k projektu. Náklady na ubytovanie si hradia pracovníci sami.",
   },
   {
-    question: "V akých krajinách pôsobíte?",
+    question: "Máte vlastné vozidlá a náradie?",
     answer:
-      "Zameriavame sa na projekty na Slovensku a v rámci Európskej únie. Konkrétnu lokalitu a podmienky posúdime pri dopyte.",
+      "Áno, k dispozícii sú pracovné dodávky Renault Master a základné AKU náradie.",
   },
   {
-    question: "Viete zabezpečiť celé pracovné tímy?",
+    question: "Ako sa rieši cena?",
     answer:
-      "Áno, jadrom našej ponuky sú pracovné a subdodávateľské tímy zostavené podľa požiadaviek projektu a dostupnej kapacity.",
+      "Cena sa rieši individuálne podľa typu projektu, krajiny, profesie, rozsahu práce a trvania spolupráce.",
   },
   {
-    question: "Je možná krátkodobá aj dlhodobá spolupráca?",
+    question: "Aké podklady potrebujete od klienta?",
     answer:
-      "Áno. Možnosti spolupráce nastavujeme individuálne podľa dĺžky projektu, rozsahu prác a organizačných podmienok.",
+      "Typ práce, miesto projektu, termín začiatku, počet pracovníkov, požadované profesie, očakávanú dĺžku spolupráce a administratívne požiadavky.",
   },
   {
-    question: "Ako prebieha prvý kontakt?",
-    answer:
-      "Po prijatí dopytu sa ozveme, doplníme si základné informácie a navrhneme ďalší postup. Formulár na tomto prototype zatiaľ údaje neodosiela.",
+    question: "Viete pracovať aj cez víkendy alebo turnusy?",
+    answer: "Áno, podľa dohody sú možné turnusy a víkendová práca.",
   },
   {
-    question: "Aké informácie potrebujete k návrhu riešenia?",
+    question: "Má každý tím koordinátora?",
     answer:
-      "Pomôže nám typ prác, počet pracovníkov, miesto realizácie, predpokladaný termín nástupu, trvanie projektu a informácie o ubytovaní či potrebnom vybavení.",
+      "V každej partii je zodpovedná osoba, ktorá pomáha s organizáciou tímu a komunikáciou.",
+  },
+  {
+    question: "Komu sa ozvať pri urgentnom dopyte?",
+    answer:
+      "Najrýchlejšie je zavolať alebo poslať e-mail. Dopyty rieši konateľ v pracovných dňoch približne od 7:00 do 16:00.",
+  },
+  {
+    question: "Zabezpečujete aj práce mimo stavebníctva, logistiky a výroby?",
+    answer:
+      "Niektoré typy prác mimo stavebníctva, logistiky a výroby neposkytujeme. Radi však preveríme, či vieme pomôcť s vaším konkrétnym dopytom.",
   },
 ];
 
-export const workerAreas = [
-  "Stavebné práce",
-  "Montáže",
-  "Skladové práce",
+export const timeline = [
+  {
+    year: "pred 2022",
+    title: "Skúsenosti zo stavebnej praxe",
+    description:
+      "Konateľ Michael Krennert pôsobil ako izolatér plochých striech, čo vytvorilo prirodzený základ firmy.",
+  },
+  {
+    year: "2022",
+    title: "Založenie WorkUnit s.r.o.",
+    description:
+      "Firma vznikla z praxe v stavebníctve a z reálnych projektov, kde rozhoduje kvalita a spoľahlivosť.",
+  },
+  {
+    year: "2023",
+    title: "Registrácia IČ DPH",
+    description: "WorkUnit sa ďalej profesionalizuje pre obchodné spolupráce.",
+  },
+  {
+    year: "dnes",
+    title: "Projekty na Slovensku a v zahraničí",
+    description:
+      "Firma sa zameriava najmä na dlhodobé projekty a pracovné tímy v rámci EÚ.",
+  },
+];
+
+export const contactFormServices = [
+  "Stavebníctvo",
+  "Skladová logistika",
   "Výroba",
-  "Pomocné práce",
+  "Iné",
 ];

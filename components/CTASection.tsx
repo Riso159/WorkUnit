@@ -11,8 +11,8 @@ type CTASectionProps = {
 
 export function CTASection({
   title = "Potrebujete spoľahlivý tím pre svoj projekt?",
-  description = "Pošlite nám základné informácie. Prejdeme rozsah, termín a možnosti zostavenia tímu podľa aktuálnej kapacity.",
-  buttonLabel = "Požiadať o tím",
+  description = "Pošlite nám typ práce, krajinu, termín a požadovaný počet pracovníkov. Preveríme dostupnosť a navrhneme ďalší postup.",
+  buttonLabel = "Kontaktovať WorkUnit",
   buttonHref = "/kontakt",
 }: CTASectionProps) {
   return (

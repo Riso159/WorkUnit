@@ -10,7 +10,7 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-cyan text-ink hover:bg-white hover:-translate-y-0.5 shadow-[0_12px_34px_rgba(49,213,232,.18)]",
+    "bg-cyan text-white hover:bg-white hover:text-ink hover:-translate-y-0.5 shadow-[0_12px_34px_rgba(37,99,235,.20)]",
   secondary:
     "border border-white/20 bg-white/5 text-white hover:border-cyan/60 hover:bg-white/10 hover:-translate-y-0.5",
   light:

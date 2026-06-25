@@ -13,7 +13,7 @@ export function ProjectCard({ project }: { project: Project }) {
       />
       <div className="p-7">
         <div className="mb-5 inline-flex border border-amber-300 bg-amber-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-amber-800">
-          Placeholder
+          {project.type}
         </div>
         <h2 className="text-2xl font-black leading-tight tracking-[-0.04em] text-navy">
           {project.title}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/Container";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Logo } from "@/components/Logo";
 import { navItems } from "@/lib/routes";
 
@@ -27,7 +28,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
-      <Container className="flex h-[76px] items-center justify-between">
+      <Container className="flex h-[76px] items-center justify-between gap-4">
         <Logo />
 
         <nav aria-label="Hlavná navigácia" className="hidden items-center gap-1 xl:flex">
@@ -46,12 +47,13 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden xl:block">
+        <div className="hidden items-center gap-4 xl:flex">
+          <LanguageSwitcher />
           <Link
             href="/kontakt"
             className="inline-flex min-h-11 items-center bg-navy px-5 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-steel focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
           >
-            Nezáväzný dopyt
+            Kontaktovať
           </Link>
         </div>
 
@@ -106,9 +108,13 @@ export function Header() {
               </Link>
             ))}
           </nav>
+          <div className="mt-8">
+            <LanguageSwitcher compact />
+          </div>
           <div className="mt-auto border-t border-white/10 pt-6">
             <p className="text-sm leading-6 text-slate-400">
-              Pracovné tímy pre projekty na Slovensku a v rámci EÚ.
+              Pracovné tímy a subdodávateľské služby pre Slovensko, Česko,
+              Nemecko, Rakúsko a Holandsko.
             </p>
           </div>
         </Container>
