@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { company } from "@/lib/content";
+import { workunitImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -25,6 +26,10 @@ export default function ContactPage() {
         title="Pošlite dopyt alebo napíšte priamo WorkUnit"
         description="Najrýchlejší prvý krok je telefonát alebo e-mail. Telefón zatiaľ nie je dodaný, preto je pripravený placeholder a reálne e-mailové adresy z dotazníka."
         code="WU / CONTACT"
+        image={workunitImages.contactHero}
+        imageLabel="Kontakt"
+        imageCaption="Ilustračný vizuál pre dopyt na pracovný tím alebo subdodávateľskú spoluprácu."
+        imagePosition="center 45%"
       >
         <Button href={`mailto:${company.emailPrimary}`}>Poslať e-mail</Button>
         <Button href="#" variant="secondary">

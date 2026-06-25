@@ -5,9 +5,10 @@ import { CTASection } from "@/components/CTASection";
 import { PageHero } from "@/components/PageHero";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionHeader } from "@/components/SectionHeader";
-import { VisualPlaceholder } from "@/components/VisualPlaceholder";
 import { projectTypes } from "@/lib/content";
+import { workunitImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Projekty a referencie",
@@ -28,6 +29,10 @@ export default function ProjectsPage() {
         title="Referencie pripravené bez vymýšľania klientov"
         description="Konkrétne názvy klientov, logá, fotky a čísla zatiaľ nie sú dodané. Stránka preto používa anonymizované karty a jasné označenie, čo bude doplnené."
         code="WU / CASES"
+        image={workunitImages.projectsHero}
+        imageLabel="Projekty"
+        imageCaption="Ilustračný vizuál koordinácie pracovného tímu na projekte."
+        imagePosition="center 42%"
       >
         <Button href="/kontakt">Dopyt na podobný projekt</Button>
       </PageHero>
@@ -71,10 +76,14 @@ export default function ProjectsPage() {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <VisualPlaceholder
-              label="Placeholder pre budúce recenzie a fotky z projektov"
-              code="WU / PROOF"
-              className="min-h-[420px] shadow-lift"
+            <ResponsiveImage
+              image={workunitImages.projectProof}
+              label="Koordinácia a podklady"
+              caption="Ilustračný vizuál pre budúce prípadové štúdie a schválené referencie."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              objectPosition="center 45%"
+              overlay
+              className="min-h-[420px]"
             />
           </Reveal>
         </Container>

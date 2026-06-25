@@ -6,10 +6,11 @@ import { CTASection } from "@/components/CTASection";
 import { FeatureCard } from "@/components/FeatureCard";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Timeline } from "@/components/Timeline";
-import { VisualPlaceholder } from "@/components/VisualPlaceholder";
 import { companyValues, timeline } from "@/lib/content";
+import { workunitImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "O nás",
@@ -37,10 +38,14 @@ export default function AboutPage() {
       <section className="py-20 sm:py-28">
         <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <VisualPlaceholder
-              label="Budúca fotografia tímu, vozidiel alebo náradia"
-              code="WU / TEAM"
-              className="min-h-[480px] shadow-lift"
+            <ResponsiveImage
+              image={workunitImages.aboutHero}
+              label="Ilustračný vizuál"
+              caption="Pracovný tím a koordinácia pri stavebnom zázemí."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              objectPosition="center 42%"
+              overlay
+              className="min-h-[480px]"
             />
           </Reveal>
           <Reveal delay={120}>
@@ -93,24 +98,37 @@ export default function AboutPage() {
               description="WorkUnit komunikuje iba potvrdené fakty: 2 pracovné dodávky Renault Master, základné AKU náradie, stabilní spolupracovníci a tímy s vedúcim partie."
             />
           </Reveal>
-          <div className="mt-12 grid gap-5 md:grid-cols-4">
-            {[
-              "2 pracovné dodávky Renault Master",
-              "základné AKU náradie",
-              "pracovníci s vlastnými OOPP",
-              "v každej partii zodpovedná osoba",
-            ].map((item, index) => (
-              <Reveal key={item} delay={index * 80}>
-                <article className="min-h-40 border border-slate-200 bg-white p-6 shadow-lift">
-                  <span className="font-mono text-xs font-bold text-sky-700">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h2 className="mt-6 text-lg font-black tracking-[-0.03em] text-navy">
-                    {item}
-                  </h2>
-                </article>
-              </Reveal>
-            ))}
+          <div className="mt-12 grid items-stretch gap-8 lg:grid-cols-[.95fr_1.05fr]">
+            <Reveal>
+              <ResponsiveImage
+                image={workunitImages.aboutFacilities}
+                label="Technické zázemie"
+                caption="Ilustračný vizuál pracovného vybavenia pre stavebné a montážne zákazky."
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                objectPosition="center 48%"
+                overlay
+                className="h-full min-h-[430px]"
+              />
+            </Reveal>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {[
+                "2 pracovné dodávky Renault Master",
+                "základné AKU náradie",
+                "pracovníci s vlastnými OOPP",
+                "v každej partii zodpovedná osoba",
+              ].map((item, index) => (
+                <Reveal key={item} delay={index * 80}>
+                  <article className="min-h-40 border border-slate-200 bg-white p-6 shadow-lift">
+                    <span className="font-mono text-xs font-bold text-sky-700">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h2 className="mt-6 text-lg font-black tracking-[-0.03em] text-navy">
+                      {item}
+                    </h2>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Container>
       </section>

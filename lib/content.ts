@@ -1,3 +1,5 @@
+import { workunitImages } from "@/lib/images";
+
 export const company = {
   name: "WorkUnit s.r.o.",
   ico: "54883288",
@@ -182,10 +184,10 @@ export const businessBenefits = [
 ];
 
 export const trustStats = [
-  { value: "2022", label: "založenie WorkUnit s.r.o." },
-  { value: "5–7 dní", label: "nasadenie pri bežnej zákazke" },
-  { value: "1–10", label: "typický rozsah pracovníkov" },
-  { value: "SK / CZ / AT / DE / NL", label: "krajiny pôsobenia" },
+  { value: "Založené", label: "v roku 2022" },
+  { value: "Nasadenie už", label: "do 5 – 7 dní" },
+  { value: "Malé aj väčšie", label: "pracovné tímy" },
+  { value: "Skúsenosti s projektmi", label: "v Nemecku a Česku" },
 ];
 
 export const targetCustomers = [
@@ -229,30 +231,34 @@ export const projectTypes = [
   {
     title: "Stavebný projekt v Nemecku",
     description:
-      "Anonymizovaná štruktúra pre budúcu prípadovú štúdiu zo stavebného projektu.",
+      "Ukážkový typ zákazky – konkrétne údaje budú doplnené po schválení klientom.",
     code: "DE / BUILD",
     type: "Anonymizovaný projekt",
+    image: workunitImages.projectConstructionGermany,
   },
   {
     title: "Strešné a izolatérske práce",
     description:
-      "Priestor pre doplnenie prác na plochých alebo šikmých strechách po schválení podkladov.",
+      "Ukážkový typ zákazky – konkrétne údaje budú doplnené po schválení klientom.",
     code: "ROOF / CASE",
     type: "Prípadová štúdia – doplniť údaje",
+    image: workunitImages.projectRoofing,
   },
   {
     title: "Logistická prevádzka",
     description:
-      "Placeholder pre skladový alebo logistický projekt s budúcimi číslami a fotkami.",
+      "Ukážkový typ zákazky – konkrétne údaje budú doplnené po schválení klientom.",
     code: "LOG / EU",
     type: "Fotky a čísla budú doplnené",
+    image: workunitImages.projectLogistics,
   },
   {
     title: "Montážne práce vo výrobe",
     description:
-      "Štruktúra pre výrobný alebo montážny projekt bez uvádzania názvu klienta.",
+      "Ukážkový typ zákazky – konkrétne údaje budú doplnené po schválení klientom.",
     code: "PROD / MNT",
     type: "Anonymizovaný projekt",
+    image: workunitImages.projectManufacturing,
   },
 ];
 

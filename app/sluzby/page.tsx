@@ -5,9 +5,10 @@ import { CTASection } from "@/components/CTASection";
 import { PageHero } from "@/components/PageHero";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { Reveal } from "@/components/Reveal";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionHeader } from "@/components/SectionHeader";
-import { VisualPlaceholder } from "@/components/VisualPlaceholder";
 import { collaborationSteps, services } from "@/lib/content";
+import { workunitImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Služby",
@@ -28,6 +29,10 @@ export default function ServicesPage() {
         title="Pracovné tímy podľa projektu, profesie a krajiny"
         description="WorkUnit dodáva najmä ľudí a pracovné tímy. V niektorých prípadoch môže ísť aj o prevzatie časti realizácie projektu podľa dohody, nie však o generálne dodávateľstvo."
         code="WU / SERVICES"
+        image={workunitImages.servicesHero}
+        imageLabel="Ilustračný vizuál"
+        imageCaption="Pracovné tímy v industriálnom prostredí pripravené na projekt."
+        imagePosition="center 45%"
       >
         <Button href="/kontakt">Potrebujem pracovný tím</Button>
       </PageHero>
@@ -52,10 +57,14 @@ export default function ServicesPage() {
                   }`}
                 >
                   {service.id === "stavebnictvo" ? (
-                    <VisualPlaceholder
-                      label="Budúca fotografia stavebného tímu alebo strešného projektu"
-                      code="WU / BUILD"
-                      className="min-h-[420px]"
+                    <ResponsiveImage
+                      image={workunitImages.construction}
+                      label="Stavebníctvo"
+                      caption="Ilustračný vizuál stavebných prác a pracovného tímu."
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      objectPosition="center 45%"
+                      overlay
+                      className="min-h-[420px] border-0 shadow-none"
                     />
                   ) : null}
                   <div className="p-7 sm:p-10">

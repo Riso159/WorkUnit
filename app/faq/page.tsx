@@ -6,6 +6,7 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { faqs } from "@/lib/content";
+import { workunitImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -25,6 +26,10 @@ export default function FAQPage() {
         title="Odpovede na otázky pred prvým dopytom"
         description="Konkrétne podmienky vždy závisia od projektu, krajiny, profesie a trvania spolupráce. Tu sú vecné odpovede podľa klientského dotazníka."
         code="WU / FAQ"
+        image={workunitImages.faqHero}
+        imageLabel="FAQ"
+        imageCaption="Ilustračný vizuál ku koordinácii a otázkam pred štartom projektu."
+        imagePosition="center 45%"
       >
         <Button href="/kontakt">Mám ďalšiu otázku</Button>
       </PageHero>
