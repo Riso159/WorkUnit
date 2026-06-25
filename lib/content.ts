@@ -9,10 +9,73 @@ export const company = {
   domain: "www.workunit.sk",
   emailPrimary: "info@workunit.sk",
   emailSales: "sales@workunit.sk",
-  phone: "doplniť telefón",
+  phone: "+421 907 231 829",
   founder: "Michael Krennert",
   founded: "2022",
 };
+
+export const contacts = {
+  general: {
+    role: "General Manager",
+    description: "Pre všeobecné dopyty, spoluprácu a urgentné otázky.",
+    email: "info@workunit.sk",
+    phones: [
+      {
+        label: "SK",
+        display: "+421 907 231 829",
+        href: "tel:+421907231829",
+      },
+      {
+        label: "DE",
+        display: "+49 172 8186047",
+        href: "tel:+491728186047",
+      },
+    ],
+    uses: ["všeobecné dopyty", "spolupráca", "urgentné otázky", "hlavný kontakt"],
+  },
+  sales: {
+    role: "Sales Manager",
+    description: "Pre obchodné dopyty, cenové ponuky a nové zákazky.",
+    email: "sales@workunit.sk",
+    phones: [
+      {
+        label: "Sales",
+        display: "+421 914 641 041",
+        href: "tel:+421914641041",
+      },
+    ],
+    uses: ["obchodné dopyty", "cenové ponuky", "nové zákazky", "B2B spolupráca"],
+  },
+  hr: {
+    role: "HR Manager",
+    description: "Pre pracovníkov, živnostníkov a záujemcov o spoluprácu.",
+    email: "recruitment@workunit.sk",
+    phones: [
+      {
+        label: "HR",
+        display: "+421 948 515 708",
+        href: "tel:+421948515708",
+      },
+    ],
+    uses: ["pracovníci", "živnostníci", "pracovné príležitosti", "pracovné tímy"],
+  },
+  footer: {
+    emails: [
+      {
+        display: "info@workunit.sk",
+        href: "mailto:info@workunit.sk",
+      },
+      {
+        display: "sales@workunit.sk",
+        href: "mailto:sales@workunit.sk",
+      },
+    ],
+    phone: {
+      display: "+421 907 231 829",
+      href: "tel:+421907231829",
+    },
+  },
+} as const;
 
 export type ServiceSection = {
   id: string;
@@ -346,8 +409,8 @@ export const timeline = [
 ];
 
 export const contactFormServices = [
-  "Stavebníctvo",
-  "Skladová logistika",
-  "Výroba",
+  "Všeobecný dopyt",
+  "Obchodná spolupráca / cenová ponuka",
+  "Pracovníci / HR",
   "Iné",
 ];

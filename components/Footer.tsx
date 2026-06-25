@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
-import { company } from "@/lib/content";
+import { contacts } from "@/lib/content";
 import { footerServices, navItems } from "@/lib/routes";
 
 export function Footer() {
@@ -25,25 +25,21 @@ export function Footer() {
 
           <div>
             <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-cyan">
-              Kontakt a firemné údaje
+              Kontakt
             </h2>
             <address className="mt-6 space-y-3 text-sm not-italic leading-6 text-slate-400">
-              <p>{company.name}</p>
-              <p>{company.address}</p>
-              <p>IČO: {company.ico}</p>
-              <p>DIČ: {company.dic}</p>
-              <p>IČ DPH: {company.icDph}</p>
+              {contacts.footer.emails.map((email) => (
+                <p key={email.href}>
+                  <a className="transition hover:text-cyan" href={email.href}>
+                    {email.display}
+                  </a>
+                </p>
+              ))}
               <p>
-                <a className="transition hover:text-cyan" href={`mailto:${company.emailPrimary}`}>
-                  {company.emailPrimary}
+                <a className="transition hover:text-cyan" href={contacts.footer.phone.href}>
+                  {contacts.footer.phone.display}
                 </a>
               </p>
-              <p>
-                <a className="transition hover:text-cyan" href={`mailto:${company.emailSales}`}>
-                  {company.emailSales}
-                </a>
-              </p>
-              <p className="text-slate-500">Telefón: placeholder</p>
             </address>
           </div>
         </div>

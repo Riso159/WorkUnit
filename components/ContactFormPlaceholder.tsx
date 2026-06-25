@@ -20,6 +20,13 @@ export function ContactFormPlaceholder({ compact = false }: { compact?: boolean 
       className={`border border-slate-200 bg-white shadow-lift ${compact ? "p-6 sm:p-8" : "p-6 sm:p-10"}`}
       aria-label="Kontaktný formulár WorkUnit"
     >
+      <div className="mb-8 border-l-2 border-cyan bg-mist px-5 py-4">
+        <p className="text-sm font-semibold leading-7 text-navy">
+          Nie ste si istí, koho kontaktovať? Vyplňte formulár a vašu správu
+          nasmerujeme správnej osobe.
+        </p>
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="name" label="Meno a priezvisko" placeholder="Vaše meno" required />
         <Field id="company" label="Firma" placeholder="Názov firmy" required />
@@ -28,16 +35,16 @@ export function ContactFormPlaceholder({ compact = false }: { compact?: boolean 
 
         <label className="sm:col-span-2">
           <span className="mb-2 block text-xs font-bold uppercase tracking-[0.12em] text-navy">
-            Typ služby
+            Typ dopytu
           </span>
           <select
-            name="serviceType"
+            name="inquiryType"
             defaultValue=""
             required
             className="min-h-12 w-full rounded-none border border-slate-300 bg-white px-4 text-sm text-navy outline-none transition focus:border-sky-600 focus:ring-2 focus:ring-cyan/25"
           >
             <option value="" disabled>
-              Vyberte službu
+              Vyberte typ dopytu
             </option>
             {contactFormServices.map((service) => (
               <option key={service}>{service}</option>
