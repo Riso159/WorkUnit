@@ -10,8 +10,6 @@ type PageHeroProps = {
   children?: ReactNode;
   code?: string;
   image?: WorkunitImage;
-  imageLabel?: string;
-  imageCaption?: string;
   imagePosition?: string;
 };
 
@@ -22,8 +20,6 @@ export function PageHero({
   children,
   code = "WU / 2022",
   image,
-  imageLabel,
-  imageCaption,
   imagePosition = "center",
 }: PageHeroProps) {
   return (
@@ -52,8 +48,6 @@ export function PageHero({
           {image ? (
             <ResponsiveImage
               image={image}
-              label={imageLabel}
-              caption={imageCaption}
               sizes="(min-width: 1024px) 420px, 100vw"
               objectPosition={imagePosition}
               overlay

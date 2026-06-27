@@ -8,8 +8,6 @@ export function ProjectCard({ project }: { project: Project }) {
     <article className="group overflow-hidden border border-slate-200 bg-white transition duration-500 hover:-translate-y-1 hover:shadow-lift">
       <ResponsiveImage
         image={project.image}
-        label={project.type}
-        caption="Ilustračný vizuál pre anonymizovaný typ projektu."
         sizes="(min-width: 768px) 50vw, 100vw"
         overlay
         className="min-h-64 border-0 shadow-none"

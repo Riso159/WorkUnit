@@ -106,9 +106,7 @@ export default function HomePage() {
             {targetCustomers.map((customer, index) => (
               <Reveal key={customer} delay={(index % 3) * 80}>
                 <article className="flex min-h-24 items-center gap-4 border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-cyan hover:shadow-lift">
-                  <span className="font-mono text-xs font-bold text-sky-700">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  <span className="h-10 w-1 shrink-0 bg-cyan" aria-hidden="true" />
                   <h3 className="text-sm font-black uppercase leading-6 tracking-[0.08em] text-navy">
                     {customer}
                   </h3>

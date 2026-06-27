@@ -30,8 +30,6 @@ export default function ContactPage() {
         description="Vyberte si kontakt podľa typu dopytu alebo vyplňte formulár. Správu následne nasmerujeme osobe, ktorá ju vie najrýchlejšie riešiť."
         code="WU / CONTACT"
         image={workunitImages.contactHero}
-        imageLabel="Kontakt"
-        imageCaption="Ilustračný vizuál pre dopyt na pracovný tím alebo subdodávateľskú spoluprácu."
         imagePosition="center 45%"
       >
         <Button href={`mailto:${contacts.general.email}`}>Poslať e-mail</Button>
@@ -116,26 +114,6 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-mist py-10">
-        <Container>
-          <div
-            className="blueprint relative grid min-h-80 place-items-center overflow-hidden bg-steel text-center text-white"
-            role="img"
-            aria-label="Geografický placeholder namiesto mapy"
-          >
-            <div className="absolute inset-0 bg-hero-radial" />
-            <div className="relative">
-              <span className="mx-auto grid size-14 place-items-center border border-cyan text-2xl text-cyan">
-                +
-              </span>
-              <h2 className="mt-5 text-xl font-black">Mapový podklad nie je prioritou tejto verzie</h2>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400">
-                Kontaktný formulár · E-mail · Telefón
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
     </>
   );
 }

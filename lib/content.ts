@@ -69,6 +69,10 @@ export const contacts = {
         display: "sales@workunit.sk",
         href: "mailto:sales@workunit.sk",
       },
+      {
+        display: "recruitment@workunit.sk",
+        href: "mailto:recruitment@workunit.sk",
+      },
     ],
     phone: {
       display: "+421 907 231 829",

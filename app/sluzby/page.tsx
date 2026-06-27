@@ -30,8 +30,6 @@ export default function ServicesPage() {
         description="WorkUnit dodáva najmä ľudí a pracovné tímy. V niektorých prípadoch môže ísť aj o prevzatie časti realizácie projektu podľa dohody, nie však o generálne dodávateľstvo."
         code="WU / SERVICES"
         image={workunitImages.servicesHero}
-        imageLabel="Ilustračný vizuál"
-        imageCaption="Pracovné tímy v industriálnom prostredí pripravené na projekt."
         imagePosition="center 45%"
       >
         <Button href="/kontakt">Potrebujem pracovný tím</Button>
@@ -59,8 +57,6 @@ export default function ServicesPage() {
                   {service.id === "stavebnictvo" ? (
                     <ResponsiveImage
                       image={workunitImages.construction}
-                      label="Stavebníctvo"
-                      caption="Ilustračný vizuál stavebných prác a pracovného tímu."
                       sizes="(min-width: 1024px) 42vw, 100vw"
                       objectPosition="center 45%"
                       overlay

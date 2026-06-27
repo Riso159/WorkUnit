@@ -30,8 +30,6 @@ export default function ProjectsPage() {
         description="Konkrétne názvy klientov, logá, fotky a čísla zatiaľ nie sú dodané. Stránka preto používa anonymizované karty a jasné označenie, čo bude doplnené."
         code="WU / CASES"
         image={workunitImages.projectsHero}
-        imageLabel="Projekty"
-        imageCaption="Ilustračný vizuál koordinácie pracovného tímu na projekte."
         imagePosition="center 42%"
       >
         <Button href="/kontakt">Dopyt na podobný projekt</Button>
@@ -78,8 +76,6 @@ export default function ProjectsPage() {
           <Reveal delay={100}>
             <ResponsiveImage
               image={workunitImages.projectProof}
-              label="Koordinácia a podklady"
-              caption="Ilustračný vizuál pre budúce prípadové štúdie a schválené referencie."
               sizes="(min-width: 1024px) 50vw, 100vw"
               objectPosition="center 45%"
               overlay

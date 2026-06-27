@@ -40,8 +40,6 @@ export default function AboutPage() {
           <Reveal>
             <ResponsiveImage
               image={workunitImages.aboutHero}
-              label="Ilustračný vizuál"
-              caption="Pracovný tím a koordinácia pri stavebnom zázemí."
               sizes="(min-width: 1024px) 50vw, 100vw"
               objectPosition="center 42%"
               overlay
@@ -102,8 +100,6 @@ export default function AboutPage() {
             <Reveal>
               <ResponsiveImage
                 image={workunitImages.aboutFacilities}
-                label="Technické zázemie"
-                caption="Ilustračný vizuál pracovného vybavenia pre stavebné a montážne zákazky."
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 objectPosition="center 48%"
                 overlay

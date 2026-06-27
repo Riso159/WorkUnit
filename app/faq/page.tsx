@@ -27,8 +27,6 @@ export default function FAQPage() {
         description="Konkrétne podmienky vždy závisia od projektu, krajiny, profesie a trvania spolupráce. Tu sú vecné odpovede podľa klientského dotazníka."
         code="WU / FAQ"
         image={workunitImages.faqHero}
-        imageLabel="FAQ"
-        imageCaption="Ilustračný vizuál ku koordinácii a otázkam pred štartom projektu."
         imagePosition="center 45%"
       >
         <Button href="/kontakt">Mám ďalšiu otázku</Button>
