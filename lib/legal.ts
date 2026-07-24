@@ -205,7 +205,7 @@ export const privacySections: LegalSection[] = [
       {
         paragraphs: [
           "Prevádzkovateľ si vyhradzuje právo tieto zásady aktualizovať podľa zmien právnych predpisov alebo spôsobu spracúvania osobných údajov.",
-          "Posledná aktualizácia: __________",
+          "Posledná aktualizácia: 24. 7. 2026",
         ],
       },
     ],

@@ -42,7 +42,7 @@ export default function FAQPage() {
 
       <CTASection
         title="Nenašli ste odpoveď?"
-        description="Napíšte nám základné parametre projektu alebo otázku. V ďalšej fáze webu bude formulár napojený na priame odosielanie."
+        description="Napíšte nám základné parametre projektu alebo otázku cez kontaktný formulár. Správu následne nasmerujeme správnej osobe."
         buttonLabel="Kontaktovať WorkUnit"
       />
     </>

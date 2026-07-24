@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
     <LegalTextPage
       eyebrow="Právne informácie"
       title="Zásady spracúvania osobných údajov"
-      description="Text právnych informácií je zapracovaný podľa podkladov dodaných klientom."
+      description="Tieto informácie vysvetľujú, ako WorkUnit s.r.o. spracúva osobné údaje."
       sections={privacySections}
     />
   );
