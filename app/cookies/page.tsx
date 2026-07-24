@@ -1,23 +1,8 @@
-import type { Metadata } from "next";
-import { LegalTextPage } from "@/components/LegalContent";
-import { cookieSections } from "@/lib/legal";
+import { SitePage } from "@/components/SitePage";
+import { getPageMetadata } from "@/lib/site-content";
 
-export const metadata: Metadata = {
-  title: "Cookies politika",
-  description: "Cookies politika webovej stránky www.workunit.sk.",
-  openGraph: {
-    title: "Cookies politika | WorkUnit s.r.o.",
-    description: "Informácie o používaní cookies na webovej stránke WorkUnit s.r.o.",
-  },
-};
+export const metadata = getPageMetadata("sk", "cookies");
 
-export default function CookiesPolicyPage() {
-  return (
-    <LegalTextPage
-      eyebrow="Právne informácie"
-      title="Cookies politika"
-      description="Informácie o používaní súborov cookies na webovej stránke WorkUnit s.r.o."
-      sections={cookieSections}
-    />
-  );
+export default function CookiesPage() {
+  return <SitePage locale="sk" pageId="cookies" />;
 }

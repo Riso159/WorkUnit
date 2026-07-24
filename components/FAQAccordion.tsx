@@ -7,7 +7,7 @@ type FAQ = {
   answer: string;
 };
 
-export function FAQAccordion({ items }: { items: FAQ[] }) {
+export function FAQAccordion({ items }: { items: readonly FAQ[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (

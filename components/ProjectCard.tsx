@@ -1,9 +1,20 @@
-import type { projectTypes } from "@/lib/content";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import type { WorkunitImage } from "@/lib/images";
 
-type Project = (typeof projectTypes)[number];
+type Project = {
+  title: string;
+  description: string;
+  type: string;
+  image: WorkunitImage;
+};
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  note,
+}: {
+  project: Project;
+  note: string;
+}) {
   return (
     <article className="group overflow-hidden border border-slate-200 bg-white transition duration-500 hover:-translate-y-1 hover:shadow-lift">
       <ResponsiveImage
@@ -22,7 +33,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </h2>
         <p className="mt-4 text-sm leading-7 text-slate-600">{project.description}</p>
         <p className="mt-6 border-t border-slate-100 pt-5 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-400">
-          Konkrétne údaje, názvy klientov a výsledky budú doplnené po schválení klientom.
+          {note}
         </p>
       </div>
     </article>

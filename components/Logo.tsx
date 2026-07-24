@@ -1,11 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export function Logo({ light = false }: { light?: boolean }) {
+export function Logo({
+  light = false,
+  href = "/",
+  ariaLabel = "WorkUnit – domov",
+}: {
+  light?: boolean;
+  href?: string;
+  ariaLabel?: string;
+}) {
   return (
     <Link
-      href="/"
-      aria-label="WorkUnit – domov"
+      href={href}
+      aria-label={ariaLabel}
       className="group inline-flex items-center rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
     >
       <span className="sr-only">WorkUnit</span>

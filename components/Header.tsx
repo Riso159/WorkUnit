@@ -6,11 +6,23 @@ import { useEffect, useState } from "react";
 import { Container } from "@/components/Container";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Logo } from "@/components/Logo";
-import { navItems } from "@/lib/routes";
+import {
+  chromeCopy,
+  getLocaleFromPathname,
+  navPageIds,
+  routeFor,
+} from "@/lib/i18n";
 
 export function Header() {
   const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
+  const copy = chromeCopy[locale];
   const [open, setOpen] = useState(false);
+  const navItems = navPageIds.map((pageId) => ({
+    pageId,
+    label: copy.nav[pageId],
+    href: routeFor(locale, pageId),
+  }));
 
   useEffect(() => {
     setOpen(false);
@@ -23,21 +35,24 @@ export function Header() {
     };
   }, [open]);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href: string, pageId: (typeof navPageIds)[number]) =>
+    pageId === "home" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
+    <header lang={locale} className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
       <Container className="flex h-[76px] items-center justify-between gap-4">
-        <Logo />
+        <Logo
+          href={routeFor(locale, "home")}
+          ariaLabel={copy.logoAria}
+        />
 
-        <nav aria-label="Hlavná navigácia" className="hidden items-center gap-1 xl:flex">
+        <nav aria-label={copy.navigationAria} className="hidden items-center gap-1 xl:flex">
           {navItems.map((item) => (
             <Link
-              key={item.href}
+              key={item.pageId}
               href={item.href}
               className={`relative rounded-sm px-3 py-3 text-[13px] font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan ${
-                isActive(item.href)
+                isActive(item.href, item.pageId)
                   ? "text-navy after:absolute after:inset-x-3 after:-bottom-[17px] after:h-0.5 after:bg-cyan"
                   : "text-slate-500 hover:text-navy"
               }`}
@@ -50,10 +65,10 @@ export function Header() {
         <div className="hidden items-center gap-4 xl:flex">
           <LanguageSwitcher />
           <Link
-            href="/kontakt"
+            href={routeFor(locale, "contact")}
             className="inline-flex min-h-11 items-center bg-navy px-5 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-steel focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
           >
-            Kontaktovať
+            {copy.contactCta}
           </Link>
         </div>
 
@@ -61,7 +76,7 @@ export function Header() {
           type="button"
           onClick={() => setOpen((value) => !value)}
           className="grid size-11 place-items-center border border-slate-200 text-navy transition hover:border-cyan xl:hidden"
-          aria-label={open ? "Zavrieť menu" : "Otvoriť menu"}
+          aria-label={open ? copy.closeMenu : copy.openMenu}
           aria-expanded={open}
           aria-controls="mobile-menu"
         >
@@ -92,13 +107,13 @@ export function Header() {
         }`}
       >
         <Container className="flex h-full flex-col py-8">
-          <nav aria-label="Mobilná navigácia" className="flex flex-col">
+          <nav aria-label={copy.mobileNavigationAria} className="flex flex-col">
             {navItems.map((item, index) => (
               <Link
-                key={item.href}
+                key={item.pageId}
                 href={item.href}
                 className={`flex items-center justify-between border-b border-white/10 py-4 text-xl font-bold transition hover:text-cyan ${
-                  isActive(item.href) ? "text-cyan" : "text-white"
+                  isActive(item.href, item.pageId) ? "text-cyan" : "text-white"
                 }`}
               >
                 <span>{item.label}</span>
@@ -112,10 +127,7 @@ export function Header() {
             <LanguageSwitcher compact />
           </div>
           <div className="mt-auto border-t border-white/10 pt-6">
-            <p className="text-sm leading-6 text-slate-400">
-              Pracovné tímy a subdodávateľské služby pre Slovensko, Česko,
-              Nemecko, Rakúsko a Holandsko.
-            </p>
+            <p className="text-sm leading-6 text-slate-400">{copy.mobileSummary}</p>
           </div>
         </Container>
       </div>

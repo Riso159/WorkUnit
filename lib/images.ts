@@ -53,4 +53,13 @@ export const workunitImages = {
   },
 } as const;
 
-export type WorkunitImage = (typeof workunitImages)[keyof typeof workunitImages];
+export type WorkunitImage = {
+  src: string;
+  alt: string;
+};
+
+export type WorkunitImageKey = keyof typeof workunitImages;
+
+export function imageWithAlt(key: WorkunitImageKey, alt: string): WorkunitImage {
+  return { ...workunitImages[key], alt };
+}

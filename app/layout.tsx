@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { CookieConsentBanner } from "@/components/CookieConsentBanner";
+import { DocumentLocale } from "@/components/DocumentLocale";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import "./globals.css";
@@ -29,14 +30,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="sk">
+    <html lang="sk" suppressHydrationWarning>
       <body>
-        <a
-          href="#main-content"
-          className="fixed left-3 top-3 z-[100] -translate-y-24 bg-cyan px-4 py-3 text-sm font-bold text-white transition focus:translate-y-0"
-        >
-          Preskočiť na obsah
-        </a>
+        <DocumentLocale />
         <Header />
         <main id="main-content">{children}</main>
         <Footer />

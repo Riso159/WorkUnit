@@ -1,25 +1,8 @@
-import type { Metadata } from "next";
-import { LegalTextPage } from "@/components/LegalContent";
-import { privacySections } from "@/lib/legal";
+import { SitePage } from "@/components/SitePage";
+import { getPageMetadata } from "@/lib/site-content";
 
-export const metadata: Metadata = {
-  title: "Ochrana osobných údajov",
-  description:
-    "Zásady spracúvania osobných údajov spoločnosti WorkUnit s.r.o. a informácia o spracúvaní údajov pri kontaktnom formulári.",
-  openGraph: {
-    title: "Ochrana osobných údajov | WorkUnit s.r.o.",
-    description:
-      "Zásady spracúvania osobných údajov spoločnosti WorkUnit s.r.o.",
-  },
-};
+export const metadata = getPageMetadata("sk", "privacy");
 
-export default function PrivacyPolicyPage() {
-  return (
-    <LegalTextPage
-      eyebrow="Právne informácie"
-      title="Zásady spracúvania osobných údajov"
-      description="Tieto informácie vysvetľujú, ako WorkUnit s.r.o. spracúva osobné údaje."
-      sections={privacySections}
-    />
-  );
+export default function PrivacyPage() {
+  return <SitePage locale="sk" pageId="privacy" />;
 }

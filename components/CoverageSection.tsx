@@ -1,17 +1,34 @@
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
-import { countries } from "@/lib/content";
+import { countries as defaultCountries } from "@/lib/content";
 
-export function CoverageSection() {
+type Country = {
+  code: string;
+  name: string;
+  note: string;
+};
+
+export function CoverageSection({
+  eyebrow = "Mapa pôsobenia",
+  title = "Pracovné tímy pre Slovensko a vybrané krajiny EÚ",
+  description =
+    "WorkUnit komunikuje konkrétne krajiny pôsobenia. Reálne skúsenosti vie doložiť najmä v Nemecku a Česku.",
+  countries = defaultCountries,
+}: {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  countries?: readonly Country[];
+}) {
   return (
     <section className="bg-mist py-20 sm:py-28">
       <Container>
         <Reveal>
           <SectionHeader
-            eyebrow="Mapa pôsobenia"
-            title="Pracovné tímy pre Slovensko a vybrané krajiny EÚ"
-            description="WorkUnit komunikuje konkrétne krajiny pôsobenia. Reálne skúsenosti vie doložiť najmä v Nemecku a Česku."
+            eyebrow={eyebrow}
+            title={title}
+            description={description}
             align="center"
           />
         </Reveal>

@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 
 type CTASectionProps = {
+  eyebrow?: string;
   title?: string;
   description?: string;
   buttonLabel?: string;
@@ -10,6 +11,7 @@ type CTASectionProps = {
 };
 
 export function CTASection({
+  eyebrow = "Začnime rozhovor",
   title = "Potrebujete spoľahlivý tím pre svoj projekt?",
   description = "Pošlite nám typ práce, krajinu, termín a požadovaný počet pracovníkov. Preveríme dostupnosť a navrhneme ďalší postup.",
   buttonLabel = "Kontaktovať WorkUnit",
@@ -23,7 +25,7 @@ export function CTASection({
             <div className="absolute inset-0 bg-hero-radial opacity-70" />
             <div className="relative max-w-2xl">
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan">
-                Začnime rozhovor
+                {eyebrow}
               </p>
               <h2 className="text-balance text-3xl font-black leading-tight tracking-[-0.04em] sm:text-4xl">
                 {title}

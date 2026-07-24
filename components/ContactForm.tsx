@@ -4,10 +4,18 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { FormEvent } from "react";
 import { useState } from "react";
-import { contactFormServices } from "@/lib/content";
+import { formContent } from "@/lib/form-content";
+import { routeFor, type Locale } from "@/lib/i18n";
 
-export function ContactFormPlaceholder({ compact = false }: { compact?: boolean }) {
+export function ContactForm({
+  compact = false,
+  locale = "sk",
+}: {
+  compact?: boolean;
+  locale?: Locale;
+}) {
   const router = useRouter();
+  const copy = formContent[locale].contact;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -39,23 +47,25 @@ export function ContactFormPlaceholder({ compact = false }: { compact?: boolean 
           message?: string;
         } | null;
 
-        setSubmitError(data?.message ?? "Formulár sa nepodarilo odoslať.");
+        setSubmitError(locale === "sk" ? (data?.message ?? copy.error) : copy.error);
         return;
       }
 
-      router.push("/dakujeme");
+      router.push(routeFor(locale, "thankYou"));
     } catch {
-      setSubmitError("Formulár sa nepodarilo odoslať. Skúste to prosím znova.");
+      setSubmitError(copy.error);
     } finally {
       setIsSubmitting(false);
     }
   }
 
+  const privacyHref = routeFor(locale, "privacy");
+
   return (
     <form
       onSubmit={handleSubmit}
       className={`border border-slate-200 bg-white shadow-lift ${compact ? "p-6 sm:p-8" : "p-6 sm:p-10"}`}
-      aria-label="Kontaktný formulár WorkUnit"
+      aria-label={copy.aria}
     >
       <input
         type="text"
@@ -67,21 +77,18 @@ export function ContactFormPlaceholder({ compact = false }: { compact?: boolean 
       />
 
       <div className="mb-8 border-l-2 border-cyan bg-mist px-5 py-4">
-        <p className="text-sm font-semibold leading-7 text-navy">
-          Nie ste si istí, koho kontaktovať? Vyplňte formulár a vašu správu
-          nasmerujeme správnej osobe.
-        </p>
+        <p className="text-sm font-semibold leading-7 text-navy">{copy.intro}</p>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field id="name" label="Meno a priezvisko" placeholder="Vaše meno" required />
-        <Field id="company" label="Firma" placeholder="Názov firmy" required />
-        <Field id="email" label="E-mail" placeholder="vas@email.sk" type="email" required />
-        <Field id="phone" label="Telefón" placeholder="+421 ..." type="tel" />
+        <Field id="name" copy={copy.name} required />
+        <Field id="company" copy={copy.company} required />
+        <Field id="email" copy={copy.email} type="email" required />
+        <Field id="phone" copy={copy.phone} type="tel" />
 
         <label className="sm:col-span-2">
           <span className="mb-2 block text-xs font-bold uppercase tracking-[0.12em] text-navy">
-            Typ dopytu <span className="text-sky-700">*</span>
+            {copy.inquiryType} <span className="text-sky-700">*</span>
           </span>
           <select
             name="inquiryType"
@@ -90,31 +97,27 @@ export function ContactFormPlaceholder({ compact = false }: { compact?: boolean 
             className="min-h-12 w-full rounded-none border border-slate-300 bg-white px-4 text-sm text-navy outline-none transition focus:border-sky-600 focus:ring-2 focus:ring-cyan/25"
           >
             <option value="" disabled>
-              Vyberte typ dopytu
+              {copy.inquiryPlaceholder}
             </option>
-            {contactFormServices.map((service) => (
-              <option key={service}>{service}</option>
+            {copy.inquiryOptions.map((option) => (
+              <option key={option}>{option}</option>
             ))}
           </select>
         </label>
 
-        <Field id="projectLocation" label="Miesto projektu" placeholder="Krajina, mesto alebo región" />
-        <Field
-          id="teamSize"
-          label="Počet pracovníkov / veľkosť tímu"
-          placeholder="Napr. 2, 6+, 1–10"
-        />
-        <Field id="startDate" label="Termín začiatku" placeholder="Napr. čo najskôr / dátum" />
+        <Field id="projectLocation" copy={copy.projectLocation} />
+        <Field id="teamSize" copy={copy.teamSize} />
+        <Field id="startDate" copy={copy.startDate} className="sm:col-span-2" />
 
         <label className="sm:col-span-2">
           <span className="mb-2 block text-xs font-bold uppercase tracking-[0.12em] text-navy">
-            Správa <span className="text-sky-700">*</span>
+            {copy.message.label} <span className="text-sky-700">*</span>
           </span>
           <textarea
             name="message"
             required
             rows={compact ? 4 : 6}
-            placeholder="Napíšte typ práce, miesto projektu, termín, počet pracovníkov a administratívne požiadavky."
+            placeholder={copy.message.placeholder}
             className="w-full resize-y rounded-none border border-slate-300 px-4 py-3 text-sm text-navy outline-none transition placeholder:text-slate-400 focus:border-sky-600 focus:ring-2 focus:ring-cyan/25"
           />
         </label>
@@ -129,11 +132,14 @@ export function ContactFormPlaceholder({ compact = false }: { compact?: boolean 
           className="mt-0.5 size-4 rounded-none border-slate-300 accent-sky-700"
         />
         <span>
-          Odoslaním formulára beriem na vedomie spracúvanie osobných údajov podľa{" "}
-          <Link href="/ochrana-osobnych-udajov" className="font-semibold text-navy underline decoration-cyan/50 underline-offset-4 transition hover:text-sky-700">
-            Zásad ochrany osobných údajov
+          {copy.gdprPrefix}{" "}
+          <Link
+            href={privacyHref}
+            className="font-semibold text-navy underline decoration-cyan/50 underline-offset-4 transition hover:text-sky-700"
+          >
+            {copy.privacyLink}
           </Link>
-          .
+          {copy.gdprSuffix}
         </span>
       </label>
 
@@ -146,16 +152,19 @@ export function ContactFormPlaceholder({ compact = false }: { compact?: boolean 
         disabled={isSubmitting}
         className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-3 bg-navy px-6 text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-steel focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
-        {isSubmitting ? "Odosielam..." : "Odoslať dopyt"}
+        {isSubmitting ? copy.submitting : copy.submit}
         <span aria-hidden="true">→</span>
       </button>
 
       <p className="mt-5 text-xs leading-5 text-slate-500">
-        Informácia o spracúvaní osobných údajov pri kontaktnom formulári je uvedená na stránke{" "}
-        <Link href="/ochrana-osobnych-udajov" className="font-semibold text-navy transition hover:text-sky-700">
-          Ochrana osobných údajov
+        {copy.helperPrefix}{" "}
+        <Link
+          href={privacyHref}
+          className="font-semibold text-navy transition hover:text-sky-700"
+        >
+          {copy.helperLink}
         </Link>
-        . Údaje z formulára sú odosielané cez zabezpečený serverový endpoint.
+        {copy.helperSuffix}
       </p>
     </form>
   );
@@ -163,21 +172,21 @@ export function ContactFormPlaceholder({ compact = false }: { compact?: boolean 
 
 function Field({
   id,
-  label,
-  placeholder,
+  copy,
   type = "text",
   required = false,
+  className = "",
 }: {
   id: string;
-  label: string;
-  placeholder: string;
+  copy: { label: string; placeholder: string };
   type?: string;
   required?: boolean;
+  className?: string;
 }) {
   return (
-    <label htmlFor={id} className={id === "startDate" ? "sm:col-span-2" : ""}>
+    <label htmlFor={id} className={className}>
       <span className="mb-2 block text-xs font-bold uppercase tracking-[0.12em] text-navy">
-        {label}
+        {copy.label}
         {required ? <span className="text-sky-700"> *</span> : null}
       </span>
       <input
@@ -185,7 +194,7 @@ function Field({
         name={id}
         type={type}
         required={required}
-        placeholder={placeholder}
+        placeholder={copy.placeholder}
         className="min-h-12 w-full rounded-none border border-slate-300 px-4 text-sm text-navy outline-none transition placeholder:text-slate-400 focus:border-sky-600 focus:ring-2 focus:ring-cyan/25"
       />
     </label>

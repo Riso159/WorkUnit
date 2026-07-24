@@ -4,7 +4,7 @@ type TimelineItem = {
   description: string;
 };
 
-export function Timeline({ items }: { items: TimelineItem[] }) {
+export function Timeline({ items }: { items: readonly TimelineItem[] }) {
   return (
     <ol className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
       {items.map((item) => (

@@ -3,7 +3,7 @@ type Step = {
   description: string;
 };
 
-export function ProcessSteps({ steps }: { steps: Step[] }) {
+export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
   return (
     <ol className="relative mt-12 grid gap-0 lg:grid-cols-7">
       <div
