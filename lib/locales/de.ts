@@ -261,7 +261,7 @@ export const deContent: SiteLocaleContent = {
         description:
           "Teams für Lager- und Logistikbetriebe, bei denen Zuverlässigkeit, Arbeitstempo und Anpassungsfähigkeit entscheidend sind.",
         items: [
-          "Gabelstaplerbetrieb",
+          "Bedienung von Gabelstaplern",
           "Warenumschlag",
           "Verladung",
           "Entladung",
@@ -352,7 +352,7 @@ export const deContent: SiteLocaleContent = {
       eyebrow: "Künftige Nachweise",
       title: "Bereich für freigegebene Kundenlogos",
       description:
-        "Referenzen, Projekte, Logos und Fotos sind vorhanden, wurden jedoch noch nicht zur Veröffentlichung bereitgestellt oder freigegeben.",
+        "Freigegebene Referenzen, Kundenlogos und Projektfotos können ergänzt werden, sobald sie zur Veröffentlichung vorliegen.",
     },
     clientLogo: "Kundenlogo",
     cta: {

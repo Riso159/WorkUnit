@@ -35,6 +35,7 @@ const hrefLangKeys: Record<Locale, string> = {
 export function getPageMetadata(locale: Locale, pageId: PageId): Metadata {
   const copy = siteContent[locale].metadata[pageId];
   const canonical = localizedRoutes[pageId][locale];
+  const isThankYouPage = pageId === "thankYou" || pageId === "workerThankYou";
   const languages = Object.fromEntries(
     locales.map((language) => [hrefLangKeys[language], localizedRoutes[pageId][language]]),
   );
@@ -49,6 +50,12 @@ export function getPageMetadata(locale: Locale, pageId: PageId): Metadata {
         "x-default": localizedRoutes[pageId].sk,
       },
     },
+    robots: isThankYouPage
+      ? {
+          index: false,
+          follow: false,
+        }
+      : undefined,
     openGraph: {
       title: copy.openGraphTitle ?? copy.title,
       description: copy.openGraphDescription ?? copy.description,

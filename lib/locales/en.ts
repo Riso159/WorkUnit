@@ -350,7 +350,7 @@ export const enContent: SiteLocaleContent = {
       eyebrow: "Future evidence",
       title: "Reserved for approved client logos",
       description:
-        "References, projects, logos and photographs exist, but have not yet been supplied or approved for publication.",
+        "Approved references, client logos and project photographs can be added once they are available for publication.",
     },
     clientLogo: "Client logo",
     cta: {

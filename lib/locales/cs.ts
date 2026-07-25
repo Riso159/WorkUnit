@@ -196,7 +196,7 @@ export const csContent: SiteLocaleContent = {
         {
           title: "Menší i větší týmy",
           description:
-            "Obvykle zajišťujeme 1–10 pracovníků, od dvojic po větší skupiny podle projektu.",
+            "Obvykle zajišťujeme 1–10 pracovníků, od dvojic po větší týmy podle projektu.",
         },
         {
           title: "Stabilní spolupracovníci",
@@ -294,7 +294,7 @@ export const csContent: SiteLocaleContent = {
     provide: {
       title: "Co dokážeme zajistit",
       description:
-        "Pracovníky, pracovní týmy, stabilní spolupracovníky, dopravu podle možností týmu nebo pracovní dodávky a základní akumulátorové nářadí. Každá skupina má odpovědnou osobu, která pomáhá s organizací.",
+        "Pracovníky, pracovní týmy, stabilní spolupracovníky, dopravu podle možností týmu nebo pracovní dodávky a základní akumulátorové nářadí. Každý tým má odpovědnou osobu, která pomáhá s organizací.",
     },
     clientNeeds: {
       title: "Co potřebujeme od klienta",
@@ -353,7 +353,7 @@ export const csContent: SiteLocaleContent = {
       eyebrow: "Budoucí reference",
       title: "Prostor pro loga klientů",
       description:
-        "Reference, projekty, loga a fotografie existují, ale zatím nebyly dodány nebo schváleny ke zveřejnění.",
+        "Schválené reference, loga klientů a projektové fotografie doplníme, jakmile budou k dispozici ke zveřejnění.",
     },
     clientLogo: "Logo klienta",
     cta: {
@@ -414,12 +414,12 @@ export const csContent: SiteLocaleContent = {
       eyebrow: "Zázemí",
       title: "Praktické vybavení pro projekty",
       description:
-        "Uvádíme pouze potvrzené informace: 2 pracovní dodávky Renault Master, základní akumulátorové nářadí, stabilní spolupracovníci a týmy s vedoucím skupiny.",
+        "Uvádíme pouze potvrzené informace: 2 pracovní dodávky Renault Master, základní akumulátorové nářadí, stabilní spolupracovníci a týmy s vedoucím týmu.",
       items: [
         "2 pracovní dodávky Renault Master",
         "základní akumulátorové nářadí",
         "pracovníci s vlastními OOPP",
-        "odpovědná osoba v každé skupině",
+        "odpovědná osoba v každém týmu",
       ],
     },
     timelineSection: {
@@ -503,7 +503,7 @@ export const csContent: SiteLocaleContent = {
       {
         question: "Má každý tým koordinátora?",
         answer:
-          "V každé skupině je odpovědná osoba, která pomáhá s organizací týmu a komunikací.",
+          "V každém týmu je odpovědná osoba, která pomáhá s organizací týmu a komunikací.",
       },
       {
         question: "Koho kontaktovat s urgentní poptávkou?",
@@ -597,7 +597,7 @@ export const csContent: SiteLocaleContent = {
         {
           title: "Pracovní týmy",
           description:
-            "Pokud pracujete jako sehraná skupina, pošlete nám informace o týmu, profesích a dostupnosti.",
+            "Pokud pracujete jako sehraný tým, pošlete nám informace o týmu, profesích a dostupnosti.",
         },
         {
           title: "Živnostníci",

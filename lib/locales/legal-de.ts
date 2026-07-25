@@ -7,7 +7,7 @@ export const dePrivacySections: LegalSection[] = [
       {
         paragraphs: [
           "Verantwortlicher für die Verarbeitung personenbezogener Daten ist:",
-          "WorkUnit s. r. o.\nPod Juhom 7666/1\n911 01 Trenčín\nUnternehmens-ID: 54883288\nSteuer-ID: 2121824540\nUSt-IdNr.: SK2121824540\n\nE-Mail: info@workunit.sk\nTelefon: +421 907 231 829",
+          "WorkUnit s. r. o.\nPod Juhom 7666/1\n911 01 Trenčín\nUnternehmens-ID (IČO): 54883288\nSteuer-ID: 2121824540\nUSt-IdNr.: SK2121824540\n\nE-Mail: info@workunit.sk\nTelefon: +421 907 231 829",
           "(nachfolgend „Verantwortlicher“)",
           "Der Verantwortliche verarbeitet personenbezogene Daten gemäß der Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates (DSGVO) sowie dem slowakischen Gesetz Nr. 18/2018 Slg. über den Schutz personenbezogener Daten.",
         ],
@@ -324,7 +324,7 @@ export const deCookieSections: LegalSection[] = [
     blocks: [
       {
         paragraphs: [
-          "WorkUnit s. r. o.\nPod Juhom 7666/1\n911 01 Trenčín\n\nUnternehmens-ID: 54883288\n\nE-Mail:\ninfo@workunit.sk",
+          "WorkUnit s. r. o.\nPod Juhom 7666/1\n911 01 Trenčín\n\nUnternehmens-ID (IČO): 54883288\n\nE-Mail:\ninfo@workunit.sk",
         ],
       },
     ],

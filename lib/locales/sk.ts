@@ -244,7 +244,7 @@ export const skContent: SiteLocaleContent = {
       eyebrow: "Budúce dôkazy",
       title: "Miesto pre logá klientov",
       description:
-        "Referencie, projekty, logá a fotografie existujú, no na zverejnenie zatiaľ neboli dodané alebo schválené.",
+        "Schválené referencie, logá klientov a projektové fotografie doplníme, keď budú k dispozícii na zverejnenie.",
     },
     clientLogo: "Logo klienta",
     cta: {
