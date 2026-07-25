@@ -14,6 +14,7 @@ import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/Container";
 import { CoverageSection } from "@/components/CoverageSection";
+import { CookiePreferences } from "@/components/CookiePreferences";
 import { CTASection } from "@/components/CTASection";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -100,7 +101,11 @@ function HomePage({ locale }: { locale: Locale }) {
               <span className="h-px w-9 bg-cyan" />
               {copy.hero.eyebrow}
             </div>
-            <h1 className="hero-enter hero-delay-1 text-balance text-5xl font-black leading-[.98] tracking-[-0.06em] sm:text-6xl lg:text-[74px]">
+            <h1
+              className={`hero-enter hero-delay-1 break-words text-balance font-black leading-[.98] tracking-[-0.06em] hyphens-auto ${
+                locale === "de" ? "text-4xl" : "text-5xl"
+              } sm:text-6xl lg:text-[74px]`}
+            >
               {copy.hero.title}
             </h1>
             <p className="hero-enter hero-delay-2 mt-8 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
@@ -217,7 +222,7 @@ function ServicesPage({ locale }: { locale: Locale }) {
         eyebrow={copy.hero.eyebrow}
         title={copy.hero.title}
         description={copy.hero.description ?? ""}
-        code="WU / SERVICES"
+        code={content.heroCodes.services}
         image={imageWithAlt("servicesHero", content.media.servicesHero)}
         imagePosition="center 45%"
       >
@@ -328,7 +333,7 @@ function ProjectsPage({ locale }: { locale: Locale }) {
         eyebrow={copy.hero.eyebrow}
         title={copy.hero.title}
         description={copy.hero.description ?? ""}
-        code="WU / CASES"
+        code={content.heroCodes.projects}
         image={imageWithAlt("projectsHero", content.media.projectsHero)}
         imagePosition="center 42%"
       >
@@ -400,7 +405,7 @@ function AboutPage({ locale }: { locale: Locale }) {
         eyebrow={copy.hero.eyebrow}
         title={copy.hero.title}
         description={copy.hero.description ?? ""}
-        code="WU / ABOUT"
+        code={content.heroCodes.about}
       >
         <Button href={routeFor(locale, "contact")}>{copy.hero.cta}</Button>
       </PageHero>
@@ -500,7 +505,7 @@ function FaqPage({ locale }: { locale: Locale }) {
         eyebrow={copy.hero.eyebrow}
         title={copy.hero.title}
         description={copy.hero.description ?? ""}
-        code="WU / FAQ"
+        code={content.heroCodes.faq}
         image={imageWithAlt("faqHero", content.media.faqHero)}
         imagePosition="center 45%"
       >
@@ -540,7 +545,7 @@ function ContactPage({ locale }: { locale: Locale }) {
         eyebrow={copy.hero.eyebrow}
         title={copy.hero.title}
         description={copy.hero.description ?? ""}
-        code="WU / CONTACT"
+        code={content.heroCodes.contact}
         image={imageWithAlt("contactHero", content.media.contactHero)}
         imagePosition="center 45%"
       >
@@ -669,7 +674,7 @@ function RecruitmentPage({ locale }: { locale: Locale }) {
         eyebrow={copy.hero.eyebrow}
         title={copy.hero.title}
         description={copy.hero.description ?? ""}
-        code="WU / HR"
+        code={content.heroCodes.recruitment}
         image={imageWithAlt("servicesHero", content.media.servicesHero)}
         imagePosition="center 45%"
       >
@@ -803,6 +808,7 @@ function CookiesPage({ locale }: { locale: Locale }) {
       title={copy.cookies.title}
       description={copy.cookies.description}
       sections={legalContent[locale].cookies}
+      controls={<CookiePreferences locale={locale} />}
     />
   );
 }

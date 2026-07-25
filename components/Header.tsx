@@ -40,18 +40,18 @@ export function Header() {
 
   return (
     <header lang={locale} className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
-      <Container className="flex h-[76px] items-center justify-between gap-4">
+      <Container className="flex h-[76px] items-center justify-between gap-2">
         <Logo
           href={routeFor(locale, "home")}
           ariaLabel={copy.logoAria}
         />
 
-        <nav aria-label={copy.navigationAria} className="hidden items-center gap-1 xl:flex">
+        <nav aria-label={copy.navigationAria} className="hidden min-w-0 items-center gap-0 xl:flex">
           {navItems.map((item) => (
             <Link
               key={item.pageId}
               href={item.href}
-              className={`relative rounded-sm px-3 py-3 text-[13px] font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan ${
+              className={`relative shrink-0 whitespace-nowrap rounded-sm px-2 py-3 text-[13px] font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan ${
                 isActive(item.href, item.pageId)
                   ? "text-navy after:absolute after:inset-x-3 after:-bottom-[17px] after:h-0.5 after:bg-cyan"
                   : "text-slate-500 hover:text-navy"
@@ -62,11 +62,11 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 xl:flex">
+        <div className="hidden shrink-0 items-center gap-2 xl:flex">
           <LanguageSwitcher />
           <Link
             href={routeFor(locale, "contact")}
-            className="inline-flex min-h-11 items-center bg-navy px-5 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-steel focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
+            className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap bg-navy px-4 text-xs font-bold uppercase tracking-[0.08em] text-white transition hover:bg-steel focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
           >
             {copy.contactCta}
           </Link>
@@ -102,17 +102,17 @@ export function Header() {
 
       <div
         id="mobile-menu"
-        className={`fixed inset-x-0 top-[77px] h-[calc(100vh-77px)] bg-ink transition duration-300 xl:hidden ${
+        className={`fixed inset-x-0 top-[77px] h-[calc(100dvh-77px)] overflow-y-auto overscroll-contain bg-ink transition duration-300 xl:hidden ${
           open ? "visible translate-x-0 opacity-100" : "invisible translate-x-full opacity-0"
         }`}
       >
-        <Container className="flex h-full flex-col py-8">
+        <Container className="flex min-h-full flex-col py-6 sm:py-8">
           <nav aria-label={copy.mobileNavigationAria} className="flex flex-col">
             {navItems.map((item, index) => (
               <Link
                 key={item.pageId}
                 href={item.href}
-                className={`flex items-center justify-between border-b border-white/10 py-4 text-xl font-bold transition hover:text-cyan ${
+                className={`flex items-center justify-between border-b border-white/10 py-3.5 text-lg font-bold transition hover:text-cyan sm:py-4 sm:text-xl ${
                   isActive(item.href, item.pageId) ? "text-cyan" : "text-white"
                 }`}
               >
@@ -123,7 +123,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <div className="mt-8">
+          <div className="mt-6 sm:mt-8">
             <LanguageSwitcher compact />
           </div>
           <div className="mt-auto border-t border-white/10 pt-6">

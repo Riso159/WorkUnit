@@ -96,7 +96,7 @@ export async function POST(request: Request) {
 
     const fromEmail = process.env.CONTACT_FROM_EMAIL ?? "info@workunit.sk";
     const fromName = process.env.CONTACT_FROM_NAME ?? "WorkUnit web";
-    const toEmail = process.env.CONTACT_RECRUITMENT_EMAIL ?? "info@workunit.sk";
+    const toEmail = process.env.CONTACT_RECRUITMENT_EMAIL ?? "recruitment@workunit.sk";
 
     const subject = `Nový dopyt od pracovníka – ${fullName}`;
 

@@ -246,9 +246,9 @@ export const formContent: Record<Locale, FormContent> = {
         ". Údaje z formuláře jsou odesílány prostřednictvím zabezpečeného serverového rozhraní.",
     },
     recruitment: {
-      aria: "Formulář pro pracovníky a pracovní skupiny",
+      aria: "Formulář pro pracovníky a pracovní týmy",
       intro:
-        "Vyplňte údaje o sobě nebo o své pracovní skupině. HR tým WorkUnit je posoudí podle aktuálních projektů, země, zkušeností a dostupnosti.",
+        "Vyplňte údaje o sobě nebo o svém pracovním týmu. HR tým WorkUnit je posoudí podle aktuálních projektů, země, zkušeností a dostupnosti.",
       fullName: { label: "Jméno a příjmení", placeholder: "Vaše jméno" },
       email: { label: "E-mail", placeholder: "vas@email.cz" },
       phone: { label: "Telefon", placeholder: "+420 ..." },
@@ -256,7 +256,7 @@ export const formContent: Record<Locale, FormContent> = {
       applicantOptions: [
         "Jednotlivec",
         "Živnostník",
-        "Pracovní skupina",
+        "Pracovní tým",
         "Firma / subdodavatelský tým",
       ],
       mainProfession: { label: "Hlavní profese", placeholder: "Vyberte profesi" },
@@ -504,11 +504,11 @@ export const formContent: Record<Locale, FormContent> = {
       applicantType: { label: "Ich bin", placeholder: "Option auswählen" },
       applicantOptions: [
         "Einzelperson",
-        "Selbstständiger Auftragnehmer",
+        "Selbstständig tätig",
         "Arbeitsteam",
         "Unternehmen / Nachunternehmerteam",
       ],
-      mainProfession: { label: "Hauptberuf", placeholder: "Beruf auswählen" },
+      mainProfession: { label: "Haupttätigkeit", placeholder: "Tätigkeit auswählen" },
       professionOptions: [
         "Flachdachabdichter",
         "Steildachabdichter",
@@ -557,7 +557,7 @@ export const formContent: Record<Locale, FormContent> = {
       experience: {
         label: "Nachricht / Erfahrung",
         placeholder:
-          "Beschreiben Sie kurz Ihre Erfahrung und Ihren Beruf sowie vorhandenes Werkzeug, Fahrzeug, Ihre Selbstständigkeit und mögliche Auslandserfahrung.",
+          "Beschreiben Sie kurz Ihre Erfahrung und Tätigkeit sowie vorhandenes Werkzeug, Fahrzeug, Ihre Selbstständigkeit und mögliche Auslandserfahrung.",
       },
       gdprPrefix:
         "Mit dem Absenden des Formulars nehme ich die Verarbeitung meiner personenbezogenen Daten gemäß der",

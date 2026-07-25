@@ -98,6 +98,14 @@ export const skContent: SiteLocaleContent = {
     contactHero: workunitImages.contactHero.alt,
     faqHero: workunitImages.faqHero.alt,
   },
+  heroCodes: {
+    services: "WU / SLUŽBY",
+    projects: "WU / PROJEKTY",
+    about: "WU / O NÁS",
+    faq: "WU / FAQ",
+    contact: "WU / KONTAKT",
+    recruitment: "WU / HR",
+  },
   common: {
     coverage: {
       eyebrow: "Mapa pôsobenia",

@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { CookieConsentBanner } from "@/components/CookieConsentBanner";
-import { DocumentLocale } from "@/components/DocumentLocale";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import "./globals.css";
+import { SiteChrome } from "@/components/SiteChrome";
+import "../globals.css";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -28,15 +25,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function SlovakRootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="sk" suppressHydrationWarning>
+    <html lang="sk">
       <body>
-        <DocumentLocale />
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <CookieConsentBanner />
+        <SiteChrome locale="sk">{children}</SiteChrome>
       </body>
     </html>
   );

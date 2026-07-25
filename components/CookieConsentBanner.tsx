@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import {
+  COOKIE_CONSENT_CHANGE_EVENT,
+  COOKIE_CONSENT_STORAGE_KEY,
+  isCookieConsent,
+  type CookieConsent,
+} from "@/lib/cookie-consent";
 import { chromeCopy, getLocaleFromPathname, routeFor } from "@/lib/i18n";
-
-const STORAGE_KEY = "workunit-cookie-consent";
-
-type CookieConsent = "accepted" | "rejected";
 
 export function CookieConsentBanner() {
   const pathname = usePathname();
@@ -16,12 +18,30 @@ export function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const storedConsent = window.localStorage.getItem(STORAGE_KEY);
-    setVisible(storedConsent !== "accepted" && storedConsent !== "rejected");
+    function syncConsent() {
+      const storedConsent = window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY);
+      setVisible(!isCookieConsent(storedConsent));
+    }
+
+    function handleStorage(event: StorageEvent) {
+      if (event.key === COOKIE_CONSENT_STORAGE_KEY) {
+        syncConsent();
+      }
+    }
+
+    syncConsent();
+    window.addEventListener(COOKIE_CONSENT_CHANGE_EVENT, syncConsent);
+    window.addEventListener("storage", handleStorage);
+
+    return () => {
+      window.removeEventListener(COOKIE_CONSENT_CHANGE_EVENT, syncConsent);
+      window.removeEventListener("storage", handleStorage);
+    };
   }, []);
 
   function saveConsent(value: CookieConsent) {
-    window.localStorage.setItem(STORAGE_KEY, value);
+    window.localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, value);
+    window.dispatchEvent(new Event(COOKIE_CONSENT_CHANGE_EVENT));
     setVisible(false);
   }
 

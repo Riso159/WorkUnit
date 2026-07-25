@@ -209,6 +209,16 @@ type ChromeCopy = {
     textAfter: string;
     reject: string;
     accept: string;
+    preferences: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      current: string;
+      accepted: string;
+      rejected: string;
+      notSelected: string;
+      reset: string;
+    };
   };
 };
 
@@ -259,6 +269,17 @@ export const chromeCopy: Record<Locale, ChromeCopy> = {
       textAfter: ".",
       reject: "Odmietnuť",
       accept: "Prijať cookies",
+      preferences: {
+        eyebrow: "Vaša voľba",
+        title: "Nastavenie cookies",
+        description:
+          "Tu môžete skontrolovať alebo zmeniť voľbu uloženú pre tento prehliadač.",
+        current: "Aktuálna voľba",
+        accepted: "Prijaté",
+        rejected: "Odmietnuté",
+        notSelected: "Nevybraná",
+        reset: "Zrušiť uloženú voľbu",
+      },
     },
   },
   cs: {
@@ -307,6 +328,17 @@ export const chromeCopy: Record<Locale, ChromeCopy> = {
       textAfter: ".",
       reject: "Odmítnout",
       accept: "Přijmout cookies",
+      preferences: {
+        eyebrow: "Vaše volba",
+        title: "Nastavení cookies",
+        description:
+          "Zde můžete zkontrolovat nebo změnit volbu uloženou pro tento prohlížeč.",
+        current: "Aktuální volba",
+        accepted: "Přijato",
+        rejected: "Odmítnuto",
+        notSelected: "Nevybráno",
+        reset: "Zrušit uloženou volbu",
+      },
     },
   },
   en: {
@@ -355,6 +387,16 @@ export const chromeCopy: Record<Locale, ChromeCopy> = {
       textAfter: ".",
       reject: "Reject",
       accept: "Accept cookies",
+      preferences: {
+        eyebrow: "Your choice",
+        title: "Cookie preferences",
+        description: "Review or change the preference saved for this browser.",
+        current: "Current preference",
+        accepted: "Accepted",
+        rejected: "Rejected",
+        notSelected: "Not selected",
+        reset: "Reset saved preference",
+      },
     },
   },
   de: {
@@ -403,6 +445,17 @@ export const chromeCopy: Record<Locale, ChromeCopy> = {
       textAfter: ".",
       reject: "Ablehnen",
       accept: "Cookies akzeptieren",
+      preferences: {
+        eyebrow: "Ihre Auswahl",
+        title: "Cookie-Einstellungen",
+        description:
+          "Hier können Sie die für diesen Browser gespeicherte Auswahl prüfen oder ändern.",
+        current: "Aktuelle Auswahl",
+        accepted: "Akzeptiert",
+        rejected: "Abgelehnt",
+        notSelected: "Nicht ausgewählt",
+        reset: "Gespeicherte Auswahl zurücksetzen",
+      },
     },
   },
 };

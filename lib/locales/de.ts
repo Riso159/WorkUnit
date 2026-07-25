@@ -40,7 +40,7 @@ export const deContent: SiteLocaleContent = {
       description:
         "Kontaktieren Sie WorkUnit telefonisch, per E-Mail oder über das Anfrageformular.",
       openGraphDescription:
-        "Fragen Sie ein Arbeitsteam oder eine Nachunternehmer-Zusammenarbeit für Ihr B2B-Projekt an.",
+        "Fragen Sie Arbeitsteams oder Nachunternehmerleistungen für Ihr B2B-Projekt an.",
     },
     recruitment: {
       title: "Aufträge suchen | WorkUnit s.r.o.",
@@ -82,6 +82,14 @@ export const deContent: SiteLocaleContent = {
     projectProof: "Koordination von Arbeitskräften und Prüfung von Unterlagen auf der Baustelle",
     contactHero: "Mitarbeiter neben einem Transporter auf einer Baustelle",
     faqHero: "Koordination eines Arbeitsteams bei einer Projektbesprechung",
+  },
+  heroCodes: {
+    services: "WU / DIENSTLEISTUNGEN",
+    projects: "WU / PROJEKTE",
+    about: "WU / ÜBER UNS",
+    faq: "WU / FAQ",
+    contact: "WU / KONTAKT",
+    recruitment: "WU / HR",
   },
   common: {
     coverage: {
@@ -154,7 +162,7 @@ export const deContent: SiteLocaleContent = {
       },
       {
         title: "Wir prüfen die Verfügbarkeit",
-        description: "Wir prüfen Kapazitäten und stellen ein passendes Team nach Beruf und Land zusammen.",
+        description: "Wir prüfen Kapazitäten und stellen ein passendes Team nach Gewerk und Einsatzland zusammen.",
       },
       {
         title: "Wir vereinbaren die Bedingungen",
@@ -205,7 +213,7 @@ export const deContent: SiteLocaleContent = {
   services: {
     hero: {
       eyebrow: "Dienstleistungen",
-      title: "Arbeitsteams passend zu Projekt, Beruf und Einsatzland",
+      title: "Arbeitsteams passend zu Projekt, Gewerk und Einsatzland",
       description:
         "WorkUnit stellt in erster Linie Arbeitskräfte und komplette Teams bereit. Nach Vereinbarung kann auch ein klar abgegrenzter Teil der Ausführung übernommen werden; eine Tätigkeit als Generalunternehmer ist damit nicht verbunden.",
       cta: "Ich benötige ein Arbeitsteam",
@@ -243,7 +251,7 @@ export const deContent: SiteLocaleContent = {
           "Schweißarbeiten nach Verfügbarkeit",
           "Bewehrungsarbeiten",
         ],
-        note: "Die konkreten Berufe und die Teamgröße werden nach Aufgabenstellung und verfügbarer Kapazität bestätigt.",
+        note: "Die konkreten Gewerke und die Teamgröße werden nach Aufgabenstellung und verfügbarer Kapazität bestätigt.",
       },
       {
         id: "skladova-logistika",
@@ -280,7 +288,7 @@ export const deContent: SiteLocaleContent = {
       eyebrow: "Ablauf der Zusammenarbeit",
       title: "Klarer Prozess vor dem Teameinsatz",
       description:
-        "Der Auftraggeber nennt Tätigkeitsart, Projektort, Termin, Teamgröße, benötigte Berufe, voraussichtliche Dauer und administrative Anforderungen.",
+        "Der Auftraggeber nennt Tätigkeitsart, Projektort, Termin, Teamgröße, benötigte Gewerke, voraussichtliche Dauer und administrative Anforderungen.",
     },
     provide: {
       title: "Was wir bereitstellen können",
@@ -290,7 +298,7 @@ export const deContent: SiteLocaleContent = {
     clientNeeds: {
       title: "Was wir vom Auftraggeber benötigen",
       description:
-        "Vertrag oder Bestellung, Projektbeschreibung, Einsatzland und -ort, Termin, Anzahl der Arbeitskräfte, Berufe und landesspezifische administrative Anforderungen.",
+        "Vertrag oder Bestellung, Projektbeschreibung, Einsatzland und -ort, Termin, Anzahl der Arbeitskräfte, Gewerke und landesspezifische administrative Anforderungen.",
     },
     ctaTitle: "Benötigen Sie ein Team für ein langfristiges Projekt?",
   },
@@ -449,7 +457,7 @@ export const deContent: SiteLocaleContent = {
       eyebrow: "Häufige Fragen",
       title: "Antworten vor Ihrer ersten Anfrage",
       description:
-        "Die konkreten Bedingungen hängen stets von Projekt, Land, Beruf und Dauer ab. Diese Antworten bieten eine klare erste Orientierung.",
+        "Die konkreten Bedingungen hängen stets von Projekt, Einsatzland, Gewerk und Dauer ab. Diese Antworten bieten eine klare erste Orientierung.",
       cta: "Weitere Frage stellen",
     },
     items: [
@@ -481,12 +489,12 @@ export const deContent: SiteLocaleContent = {
       {
         question: "Wie wird der Preis festgelegt?",
         answer:
-          "Der Preis wird individuell anhand von Projekttyp, Land, Beruf, Leistungsumfang und Dauer vereinbart.",
+          "Der Preis wird individuell anhand von Projekttyp, Einsatzland, Gewerk, Leistungsumfang und Dauer vereinbart.",
       },
       {
         question: "Welche Informationen benötigen Sie vom Auftraggeber?",
         answer:
-          "Tätigkeitsart, Projektort, geplanter Start, Anzahl der Arbeitskräfte, benötigte Berufe, voraussichtliche Dauer und administrative Anforderungen.",
+          "Tätigkeitsart, Projektort, geplanter Start, Anzahl der Arbeitskräfte, benötigte Gewerke, voraussichtliche Dauer und administrative Anforderungen.",
       },
       {
         question: "Sind Wochenendarbeit oder Rotationseinsätze möglich?",
@@ -553,7 +561,7 @@ export const deContent: SiteLocaleContent = {
     companyEyebrow: "Unternehmensdaten",
     companyLabels: {
       address: "Adresse",
-      registrationNumber: "Unternehmensregisternummer",
+      registrationNumber: "Unternehmens-ID (IČO)",
       taxNumber: "Steuernummer",
       vatNumber: "USt-IdNr.",
       primaryEmail: "Allgemeine E-Mail",
@@ -564,7 +572,7 @@ export const deContent: SiteLocaleContent = {
     socialDescription: "Folgen Sie WorkUnit auch in den sozialen Netzwerken.",
     inquiryHelpTitle: "Angaben für Ihre Anfrage",
     inquiryHelpText:
-      "Tätigkeitsart, Projektort, geplanter Start, Anzahl der Arbeitskräfte, benötigte Berufe, voraussichtliche Dauer und administrative Anforderungen.",
+      "Tätigkeitsart, Projektort, geplanter Start, Anzahl der Arbeitskräfte, benötigte Gewerke, voraussichtliche Dauer und administrative Anforderungen.",
   },
   recruitment: {
     hero: {
@@ -579,7 +587,7 @@ export const deContent: SiteLocaleContent = {
       eyebrow: "Für wen diese Seite gedacht ist",
       title: "Für Personen und Teams, die über neue Aufträge informiert werden möchten",
       description:
-        "Die Übermittlung Ihrer Angaben garantiert keinen Auftrag. Sie ermöglicht uns, Sie bei einer passenden Möglichkeit entsprechend Beruf, Land und Verfügbarkeit zu kontaktieren.",
+        "Die Übermittlung Ihrer Angaben garantiert keinen Auftrag. Sie ermöglicht uns, Sie bei einer passenden Möglichkeit entsprechend Tätigkeit, Einsatzland und Verfügbarkeit zu kontaktieren.",
       items: [
         {
           title: "Einzelpersonen",
@@ -589,7 +597,7 @@ export const deContent: SiteLocaleContent = {
         {
           title: "Arbeitsteams",
           description:
-            "Eingespielte Teams können uns Angaben zu Teamgröße, Berufen, Erfahrung und Verfügbarkeit senden.",
+            "Eingespielte Teams können uns Angaben zu Teamgröße, Tätigkeiten, Erfahrung und Verfügbarkeit senden.",
         },
         {
           title: "Selbstständige",
@@ -604,10 +612,10 @@ export const deContent: SiteLocaleContent = {
       ],
     },
     professions: {
-      eyebrow: "Häufig gesuchte Berufe",
-      title: "Bau-, Montage-, Logistik- und Produktionsberufe",
+      eyebrow: "Häufig gesuchte Tätigkeiten",
+      title: "Tätigkeiten im Bauwesen, in der Montage, Logistik und Produktion",
       description:
-        "Auch wenn Ihr Beruf nicht aufgeführt ist, können Sie das Formular senden. Wir melden uns, wenn eine passende Möglichkeit entsteht.",
+        "Auch wenn Ihre Tätigkeit nicht aufgeführt ist, können Sie das Formular senden. Wir melden uns, wenn eine passende Möglichkeit entsteht.",
       items: [
         "Flach- und Steildachabdichter",
         "Spengler",
@@ -619,7 +627,7 @@ export const deContent: SiteLocaleContent = {
         "Lagermitarbeiter",
         "Gabelstaplerfahrer",
         "Produktionsmitarbeiter",
-        "weitere Berufe nach aktuellem Projektbedarf",
+        "weitere Tätigkeiten nach aktuellem Projektbedarf",
       ],
     },
     process: {
@@ -630,7 +638,7 @@ export const deContent: SiteLocaleContent = {
       items: [
         {
           title: "Sie füllen das Formular aus",
-          description: "Senden Sie grundlegende Angaben, Beruf, Verfügbarkeit, Wunschländer und Erfahrung.",
+          description: "Senden Sie grundlegende Angaben zu Tätigkeit, Verfügbarkeit, Wunschländern und Erfahrung.",
         },
         {
           title: "Wir prüfen Ihre Erfahrung",

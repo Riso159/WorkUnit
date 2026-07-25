@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Container } from "@/components/Container";
 
 export type LegalBlock = {
@@ -16,11 +17,13 @@ export function LegalTextPage({
   title,
   description,
   sections,
+  controls,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   sections: LegalSection[];
+  controls?: ReactNode;
 }) {
   return (
     <>
@@ -29,7 +32,7 @@ export function LegalTextPage({
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-cyan">
             {eyebrow}
           </p>
-          <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.05em] sm:text-6xl">
+          <h1 className="mt-5 max-w-4xl break-words text-[2rem] font-black leading-[1.05] tracking-[-0.045em] hyphens-auto sm:text-6xl">
             {title}
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
@@ -40,6 +43,7 @@ export function LegalTextPage({
 
       <section className="py-16 sm:py-24">
         <Container className="max-w-4xl">
+          {controls ? <div className="mb-12">{controls}</div> : null}
           <div className="space-y-12">
             {sections.map((section) => (
               <article key={section.title} className="border-b border-slate-200 pb-10 last:border-b-0 last:pb-0">

@@ -32,6 +32,10 @@ export type ServiceCopy = {
 export type SiteLocaleContent = {
   metadata: Record<PageId, MetadataCopy>;
   media: Record<WorkunitImageKey, string>;
+  heroCodes: Record<
+    "services" | "projects" | "about" | "faq" | "contact" | "recruitment",
+    string
+  >;
   common: {
     coverage: SectionCopy;
     countries: readonly { code: string; name: string; note: string }[];

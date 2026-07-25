@@ -82,6 +82,14 @@ export const enContent: SiteLocaleContent = {
     contactHero: "Worker beside a van on a construction project",
     faqHero: "Work team coordination during a project briefing",
   },
+  heroCodes: {
+    services: "WU / SERVICES",
+    projects: "WU / PROJECTS",
+    about: "WU / ABOUT",
+    faq: "WU / FAQ",
+    contact: "WU / CONTACT",
+    recruitment: "WU / HR",
+  },
   common: {
     coverage: {
       eyebrow: "Where we operate",

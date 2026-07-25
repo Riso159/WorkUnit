@@ -83,6 +83,14 @@ export const csContent: SiteLocaleContent = {
     contactHero: "Pracovník u dodávky na stavebním projektu",
     faqHero: "Koordinace pracovního týmu při projednávání požadavků projektu",
   },
+  heroCodes: {
+    services: "WU / SLUŽBY",
+    projects: "WU / PROJEKTY",
+    about: "WU / O NÁS",
+    faq: "WU / FAQ",
+    contact: "WU / KONTAKT",
+    recruitment: "WU / HR",
+  },
   common: {
     coverage: {
       eyebrow: "Kde působíme",
@@ -568,10 +576,10 @@ export const csContent: SiteLocaleContent = {
   },
   recruitment: {
     hero: {
-      eyebrow: "Pro pracovníky a pracovní skupiny",
+      eyebrow: "Pro pracovníky a pracovní týmy",
       title: "Hledáte zakázku v Česku nebo v zahraničí?",
       description:
-        "WorkUnit spolupracuje s jednotlivci i pracovními skupinami na stavebních, montážních, logistických a výrobních projektech. Vyplňte krátký formulář a ozveme se při vhodné příležitosti.",
+        "WorkUnit spolupracuje s jednotlivci i pracovními týmy na stavebních, montážních, logistických a výrobních projektech. Vyplňte krátký formulář a ozveme se při vhodné příležitosti.",
       formCta: "Vyplnit formulář",
       hrCta: "Kontaktovat HR",
     },
@@ -587,7 +595,7 @@ export const csContent: SiteLocaleContent = {
             "Máte zkušenosti ve stavebnictví, logistice nebo výrobě a hledáte novou zakázku? Pošlete nám své údaje.",
         },
         {
-          title: "Pracovní skupiny",
+          title: "Pracovní týmy",
           description:
             "Pokud pracujete jako sehraná skupina, pošlete nám informace o týmu, profesích a dostupnosti.",
         },
@@ -652,7 +660,7 @@ export const csContent: SiteLocaleContent = {
     },
     formSection: {
       eyebrow: "Kontaktní formulář pro pracovníky",
-      title: "Pošlete nám údaje o sobě nebo o své pracovní skupině",
+      title: "Pošlete nám údaje o sobě nebo o svém pracovním týmu",
       description:
         "Formulář je určen pracovníkům, živnostníkům a pracovním týmům. Zpráva bude odeslána HR kontaktu WorkUnit.",
       managerRole: "HR Manager",

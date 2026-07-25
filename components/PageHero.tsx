@@ -32,7 +32,7 @@ export function PageHero({
             <span className="h-px w-9 bg-cyan" />
             {eyebrow}
           </div>
-          <h1 className="hero-enter hero-delay-1 text-balance text-4xl font-black leading-[1.02] tracking-[-0.055em] sm:text-6xl lg:text-7xl">
+          <h1 className="hero-enter hero-delay-1 break-words text-balance text-4xl font-black leading-[1.02] tracking-[-0.055em] hyphens-auto sm:text-6xl lg:text-7xl">
             {title}
           </h1>
           <p className="hero-enter hero-delay-2 mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">

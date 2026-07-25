@@ -42,7 +42,7 @@ export const dePrivacySections: LegalSection[] = [
           "Wohn- oder Kontaktadresse,",
           "Geburtsdatum,",
           "Angaben aus einem Ausweisdokument zur Identitätsprüfung,",
-          "Unternehmensregisternummer,",
+          "Unternehmens-ID (IČO),",
           "Steueridentifikationsnummer,",
           "Umsatzsteuer-Identifikationsnummer.",
         ],
